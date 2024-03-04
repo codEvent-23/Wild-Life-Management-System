@@ -11,6 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+
 <AnchorPane prefHeight="800.0" prefWidth="1500.0" style="-fx-background-color: #f4f5f7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardFormController">
     <children>
         <Text fill="#353a52" layoutX="53.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
