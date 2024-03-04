@@ -11,6 +11,7 @@ public class Appinitilizer extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent load = FXMLLoader.load(getClass().getResource("/view/loadingForm.fxml"));
