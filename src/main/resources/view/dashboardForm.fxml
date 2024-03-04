@@ -39,7 +39,7 @@
             </image>
         </ImageView>
         <Rectangle arcWidth="25.0" fill="#daeee3" height="870.0" layoutX="809.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="611.0" />
-      <Button layoutX="521.0" layoutY="358.0" mnemonicParsing="false" onAction="#manageAnimalBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
+      <Button fx:id="btnManageAnimal" layoutX="521.0" layoutY="358.0" mnemonicParsing="false" onAction="#manageAnimalBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
       </Button>
       <Button layoutX="521.0" layoutY="358.0" mnemonicParsing="false" onAction="#manageAnimalBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
          <font>
