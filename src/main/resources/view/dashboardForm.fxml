@@ -61,18 +61,18 @@
             <Font name="Poppins Regular" size="15.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="47.0" layoutX="53.0" layoutY="438.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="685.0" />
-      <ImageView fitHeight="29.0" fitWidth="28.0" layoutX="688.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="47.0" layoutX="53.0" layoutY="438.0" stroke="#43c17a" strokeType="INSIDE" width="685.0" />
+      <ImageView fitHeight="29.0" fitWidth="28.0" layoutX="689.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/cameraIcon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="651.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="648.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/searchIcon.png" />
          </image>
       </ImageView>
-      <JFXTextField focusColor="#405aa800" layoutX="62.0" layoutY="438.0" prefHeight="47.0" prefWidth="567.0" promptText="Search animals" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField focusColor="#405aa800" layoutX="68.0" layoutY="441.0" prefHeight="38.0" prefWidth="569.0" promptText="Search animals" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
