@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -49,7 +48,7 @@
                     <stops>
                         <Stop color="BLACK" />
                         <Stop color="#43c17a" offset="0.007246376811594203" />
-                  <Stop color="#0f6e39" offset="1.0" />
+                        <Stop color="#0f6e39" offset="1.0" />
                     </stops>
                 </LinearGradient>
             </textFill>
@@ -99,11 +98,5 @@
          </font>
       </Text>
       <Text layoutX="481.0" layoutY="714.0" opacity="0.39" strokeType="OUTSIDE" strokeWidth="0.0" text="paste image or URL" underline="true" wrappingWidth="135.13623046875" />
-      <Circle fill="#43c17a" layoutX="1344.0" layoutY="389.0" radius="155.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="1194.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/24067126bgandgwMacaws-300x272-fotor-2024030416725.png" />
-         </image>
-      </ImageView>
     </children>
 </AnchorPane>
