@@ -65,5 +65,38 @@
                 <Font size="18.0" />
             </font>
         </Text>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#daeee3" height="35.0" layoutX="630.0" layoutY="444.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0" />
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="635.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/icons8-search-100%20(2).png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#daeee3" height="35.0" layoutX="680.0" layoutY="444.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0" />
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="685.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/icons8-camera-100.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="630.0" layoutY="440.0" opacity="0.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f4f4f4; -fx-background-radius: 10;" text="." textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="680.0" layoutY="440.0" opacity="0.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f4f4f4; -fx-background-radius: 10;" text="." textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="471.0" layoutY="597.0" prefHeight="38.0" prefWidth="155.0" style="-fx-background-color: linear-gradient(#43c17a, #0f6e39); -fx-background-radius: 10;" text="Upload Image" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="493.0" layoutY="689.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" text="or drop a file" wrappingWidth="111.13623046875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="481.0" layoutY="714.0" opacity="0.39" strokeType="OUTSIDE" strokeWidth="0.0" text="paste image or URL" underline="true" wrappingWidth="135.13623046875" />
     </children>
 </AnchorPane>
