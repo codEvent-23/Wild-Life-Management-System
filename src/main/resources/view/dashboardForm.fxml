@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -72,5 +73,93 @@
             <Font name="Poppins Regular" size="17.0" />
          </font>
       </JFXButton>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="832.0" layoutY="94.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Circle fill="WHITE" layoutX="969.0" layoutY="201.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="881.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Pomeranian-featured-2-fotor-2024030416352.png" />
+         </image>
+      </ImageView>
+      <Text fill="#353a52" layoutX="948.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dog">
+         <font>
+            <Font name="SansSerif Regular" size="27.0" />
+         </font>
+      </Text>
+      <Text fill="#353a52" layoutX="866.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A wildlife management" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#353a52" layoutX="866.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="four legs gf dgdsg" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="1123.0" layoutY="94.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Circle fill="WHITE" layoutX="1260.0" layoutY="201.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="1172.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/white-hotot-rabbit-eating-grass-509265984-5c0da06546e0fb0001366ac0-fotor-20240304192547.png" />
+         </image>
+      </ImageView>
+      <Text fill="#353a52" layoutX="1223.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rabbit">
+         <font>
+            <Font name="SansSerif Regular" size="27.0" />
+         </font>
+      </Text>
+      <Text fill="#353a52" layoutX="1157.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A wildlife management" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#353a52" layoutX="1157.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="four legs gf dgdsg" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="830.0" layoutY="475.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Circle fill="WHITE" layoutX="967.0" layoutY="582.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="879.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Picture2-fotor-20240304193045.png" />
+         </image>
+      </ImageView>
+      <Text fill="#353a52" layoutX="932.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parrot">
+         <font>
+            <Font name="SansSerif Regular" size="27.0" />
+         </font>
+      </Text>
+      <Text fill="#353a52" layoutX="864.0" layoutY="749.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A wildlife management" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#353a52" layoutX="864.0" layoutY="773.0" strokeType="OUTSIDE" strokeWidth="0.0" text="four legs gf dgdsg" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="1123.0" layoutY="475.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Circle fill="WHITE" layoutX="1260.0" layoutY="582.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="1172.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/d2d931c8bd297a9324e84051c4b9f6be-fotor-2024030419363.png" />
+         </image>
+      </ImageView>
+      <Text fill="#353a52" layoutX="1229.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horse">
+         <font>
+            <Font name="SansSerif Regular" size="27.0" />
+         </font>
+      </Text>
+      <Text fill="#353a52" layoutX="1157.0" layoutY="749.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A wildlife management" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#353a52" layoutX="1157.0" layoutY="773.0" strokeType="OUTSIDE" strokeWidth="0.0" text="four legs gf dgdsg" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>
