@@ -40,7 +40,7 @@ public class LoadingFormController implements Initializable {
                 Scene loginScene = new Scene(loginParent);
                 Stage loginStage = new Stage();
                 loginStage.setResizable(false);
-                Image image = new Image(getClass().getResourceAsStream("/image/icons8-bird-96 (1).png"));
+                Image image = new Image(getClass().getResourceAsStream("/image/icon.png"));
                 loginStage.getIcons().add(image);
                 loginStage.setTitle("Juice Bar Management System - Login Page");
                 loginStage.setScene(loginScene);
