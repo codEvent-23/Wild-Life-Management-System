@@ -1,0 +1,29 @@
+.searchButtonInDashboard{
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+.searchButtonInDashboard:hover{
+    -fx-background-color: #cdcdcd;
+}
+
+.searchIconInDashboard{
+    -fx-background-color: #f4f4f4;
+    -fx-background-radius: 10;
+}
+
+.searchIconInDashboard:hover{
+    -fx-background-color: #cdcdcd;
+<<<<<<< HEAD:target/classes/style/ComponentStyleSheet.css
+=======
+<<<<<<< HEAD:Wild-Life-Management-System-Ui/target/classes/style/ComponentStyleSheet.css
+=======
+}
+
+.txtSearchInDashboard{
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: white;
+>>>>>>> c59ea5a47434190308fd04efcbfd4b67b3b4fa90:target/classes/style/ComponentStyleSheet.css
+>>>>>>> 9b8937ad699522276ef86ba5e6afdd82d592f54e:Wild-Life-Management-System-Ui/target/classes/style/ComponentStyleSheet.css
+}
