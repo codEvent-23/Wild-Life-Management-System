@@ -6,3 +6,18 @@
 .searchButtonInDashboard:hover{
     -fx-background-color: #cdcdcd;
 }
+
+.searchIconInDashboard{
+    -fx-background-color: #f4f4f4;
+    -fx-background-radius: 10;
+}
+
+.searchIconInDashboard:hover{
+    -fx-background-color: #cdcdcd;
+}
+
+.txtSearchInDashboard{
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: white;
+}
