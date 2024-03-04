@@ -14,4 +14,13 @@
 
 .searchIconInDashboard:hover{
     -fx-background-color: #cdcdcd;
+<<<<<<< HEAD:Wild-Life-Management-System-Ui/target/classes/style/ComponentStyleSheet.css
+=======
+}
+
+.txtSearchInDashboard{
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: white;
+>>>>>>> c59ea5a47434190308fd04efcbfd4b67b3b4fa90:target/classes/style/ComponentStyleSheet.css
 }
