@@ -8,38 +8,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="276.0" prefWidth="760.0" style="-fx-background-color: white;" stylesheets="@../style/background.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoadingFormController">
+<AnchorPane prefHeight="495.0" prefWidth="760.0" style="-fx-background-color: white;" stylesheets="@../style/background.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoadingFormController">
    <children>
-      <ProgressBar fx:id="progressgBar" layoutX="61.0" layoutY="206.0" prefHeight="23.0" prefWidth="639.0" progress="0.0" stylesheets="@../style/progressBar.css" />
-      <Label layoutX="281.0" layoutY="76.0" style="-fx-text-fill: linear-gradient(#43c17a, #0f6e39);" text="Wildlife" textFill="WHITE">
+      <ProgressBar fx:id="progressgBar" layoutX="61.0" layoutY="416.0" prefHeight="23.0" prefWidth="639.0" progress="0.0" stylesheets="@../style/progressBar.css" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="125.0" layoutY="318.0" prefHeight="91.0" prefWidth="510.0" style="-fx-text-fill: linear-gradient(#43c17a, #0f6e39);" text="Wildlife Mangement System" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Book Antiqua" size="34.0" />
+            <Font size="38.0" />
          </font>
       </Label>
-      <Label layoutX="281.0" layoutY="121.0" style="-fx-text-fill: linear-gradient(#43c17a, #0f6e39);" text="Mangement System" textFill="WHITE">
-         <font>
-            <Font name="Book Antiqua" size="34.0" />
-         </font>
-      </Label>
-      <Text fill="#0000004b" layoutX="20.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2024">
+      <Text fill="#0000004b" layoutX="20.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2024">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
-      <Text fill="#0000004b" layoutX="73.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="l">
+      <Text fill="#0000004b" layoutX="73.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="l">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
-      <Text fill="#0000004b" layoutX="90.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="search">
+      <Text fill="#0000004b" layoutX="90.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="search">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
-      <ImageView fitHeight="130.0" fitWidth="130.0" layoutX="80.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="533.0" fitWidth="615.0" layoutX="73.0" layoutY="-68.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/icons8-hummingbird-96.png" />
+            <Image url="@../image/loadingFormGif.gif" />
          </image>
       </ImageView>
    </children>
