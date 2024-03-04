@@ -39,7 +39,7 @@
                 <Image url="@../image/dashboardManageAnimal.png" />
             </image>
         </ImageView>
-        <Rectangle arcWidth="25.0" fill="#daeee3" height="870.0" layoutX="809.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="635.0" />
+        <Rectangle arcWidth="25.0" fill="#daeee3" height="870.0" layoutX="809.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="611.0" />
         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#f4f5f7" height="250.0" layoutX="383.0" layoutY="512.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="331.0">
             <effect>
                 <DropShadow color="#0000001b" height="50.0" radius="24.5" width="50.0" />
@@ -77,10 +77,5 @@
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="18.0" layoutY="821.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/searchIcon.png" />
-         </image>
-      </ImageView>
     </children>
 </AnchorPane>
