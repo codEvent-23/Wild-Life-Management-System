@@ -15,7 +15,7 @@ public class Appinitilizer extends Application {
     public void start(Stage stage) throws Exception {
         Parent load = FXMLLoader.load(getClass().getResource("/view/loadingForm.fxml"));
         load.setStyle("-fx-background-color: transparent;");
-        Scene scene = new Scene(load, 760, 618, Color.TRANSPARENT);
+        Scene scene = new Scene(load, 820, 683, Color.TRANSPARENT);
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
         Image image = new Image(getClass().getResourceAsStream("/image/icons8-bird-96 (1).png"));
