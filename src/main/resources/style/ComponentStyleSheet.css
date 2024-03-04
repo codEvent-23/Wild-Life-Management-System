@@ -15,3 +15,16 @@
 .searchIconInDashboard:hover{
     -fx-background-color: #cdcdcd;
 }
+
+.importButtonInDashboard{
+    -fx-background-color: white;
+    -fx-border-color: #0f6e39;
+    -fx-border-width: 1;
+    -fx-text-fill: #0f6e39;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.importButtonInDashboard:hover{
+    -fx-background-color: #cdcdcd;
+}
