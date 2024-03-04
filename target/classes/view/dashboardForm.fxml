@@ -41,7 +41,7 @@
         </ImageView>
         <JFXButton layoutX="521.0" layoutY="356.0" prefHeight="38.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Manage Animal">
             <font>
-                <Font name="System Bold" size="17.0" />
+                <Font name="Poppins Regular" size="16.0" />
             </font>
             <textFill>
                 <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -68,13 +68,13 @@
       <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#daeee3" height="35.0" layoutX="630.0" layoutY="444.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0" />
       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="635.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/icons8-search-100%20(2).png" />
+            <Image url="@../image/searchIcon.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#daeee3" height="35.0" layoutX="680.0" layoutY="444.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0" />
       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="685.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/icons8-camera-100.png" />
+            <Image url="@../image/cameraIcon.png" />
          </image>
       </ImageView>
       <JFXButton layoutX="630.0" layoutY="440.0" opacity="0.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #f4f4f4; -fx-background-radius: 10;" text="." textFill="WHITE">
