@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -40,44 +39,38 @@
             </image>
         </ImageView>
         <Rectangle arcWidth="25.0" fill="#daeee3" height="870.0" layoutX="809.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="611.0" />
-        <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#f4f5f7" height="250.0" layoutX="383.0" layoutY="512.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="331.0">
-            <effect>
-                <DropShadow color="#0000001b" height="50.0" radius="24.5" width="50.0" />
-            </effect>
-        </Rectangle>
-      <JFXButton layoutX="471.0" layoutY="597.0" prefHeight="38.0" prefWidth="155.0" style="-fx-background-color: linear-gradient(#43c17a, #0f6e39); -fx-background-radius: 10;" text="Upload Image" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </JFXButton>
-      <Text layoutX="493.0" layoutY="689.0" opacity="0.68" strokeType="OUTSIDE" strokeWidth="0.0" text="or drop a file" wrappingWidth="111.13623046875">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Text>
-      <Text layoutX="487.0" layoutY="714.0" opacity="0.39" strokeType="OUTSIDE" strokeWidth="0.0" text="paste image or URL" underline="true" wrappingWidth="135.13623046875" />
       <Button layoutX="521.0" layoutY="358.0" mnemonicParsing="false" onAction="#manageAnimalBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
       </Button>
-      <Button layoutX="521.0" layoutY="358.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
+      <Button layoutX="521.0" layoutY="358.0" mnemonicParsing="false" onAction="#manageAnimalBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
          <font>
             <Font name="Poppins Regular" size="15.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="47.0" layoutX="53.0" layoutY="438.0" stroke="#43c17a" strokeType="INSIDE" width="685.0" />
-      <ImageView fitHeight="29.0" fitWidth="28.0" layoutX="689.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="47.0" layoutX="53.0" layoutY="462.0" stroke="#43c17a" strokeType="INSIDE" width="685.0" />
+      <ImageView fitHeight="29.0" fitWidth="28.0" layoutX="689.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/cameraIcon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="648.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="648.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/searchIcon.png" />
          </image>
       </ImageView>
-      <JFXTextField focusColor="#405aa800" layoutX="68.0" layoutY="441.0" prefHeight="38.0" prefWidth="569.0" promptText="Search animals" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField focusColor="#405aa800" layoutX="68.0" layoutY="465.0" prefHeight="38.0" prefWidth="569.0" promptText="Search animals" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
+      <ImageView fitHeight="263.0" fitWidth="685.0" layoutX="53.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/updateLocationImg.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="317.0" layoutY="735.0" prefHeight="38.0" prefWidth="155.0" styleClass="importButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Upload Image" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="17.0" />
+         </font>
+      </JFXButton>
     </children>
 </AnchorPane>
