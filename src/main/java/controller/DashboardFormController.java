@@ -17,14 +17,22 @@ public class DashboardFormController {
     @FXML
     void manageAnimalBtnOnAction(ActionEvent event) throws IOException {
         if (!formOpened) {
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/animalForm.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(anchorPane));
-            stage.show();
-            stage.centerOnScreen();
-            stage.setTitle("Wildlife Management System - Animal Page");
-            formOpened = true;
-            btnManageAnimal.setDisable(true);
+            openAnimalForm();
         }
+    }
+
+    private void openAnimalForm() throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/animalForm.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(anchorPane));
+        stage.show();
+        stage.centerOnScreen();
+        stage.setTitle("Wildlife Management System - Animal Page");
+
+        formOpened = true;
+        stage.setOnCloseRequest(e -> {
+            formOpened = false;
+            btnManageAnimal.setDisable(false);
+        });
     }
 }

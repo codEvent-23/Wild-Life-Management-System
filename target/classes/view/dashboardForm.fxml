@@ -17,7 +17,7 @@
                 <Font name="SansSerif Regular" size="51.0" />
             </font>
         </Text>
-        <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="202.0" layoutX="49.0" layoutY="206.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="691.0" />
+        <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="202.0" layoutX="49.0" layoutY="206.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="656.0" />
         <Text fill="#353a52aa" layoutX="58.0" layoutY="128.0" opacity="0.66" strokeType="OUTSIDE" strokeWidth="0.0" text="You can see here components about this system">
             <font>
                 <Font name="Poppins Regular" size="15.0" />
@@ -33,41 +33,39 @@
                 <Font name="Poppins Regular" size="14.0" />
             </font>
         </Text>
-        <ImageView fitHeight="229.0" fitWidth="249.0" layoutX="474.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="229.0" fitWidth="249.0" layoutX="444.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../image/dashboardManageAnimal.png" />
             </image>
         </ImageView>
-        <Rectangle arcWidth="25.0" fill="#daeee3" height="870.0" layoutX="809.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="611.0" />
-      <Button fx:id="btnManageAnimal" layoutX="521.0" layoutY="358.0" mnemonicParsing="false" onAction="#manageAnimalBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
-      </Button>
-      <Button layoutX="521.0" layoutY="358.0" mnemonicParsing="false" onAction="#manageAnimalBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
+        <Rectangle arcWidth="25.0" fill="#daeee3" height="870.0" layoutX="748.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="672.0" />
+      <Button fx:id="btnManageAnimal" layoutX="491.0" layoutY="362.0" mnemonicParsing="false" onAction="#manageAnimalBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Add Animal">
          <font>
             <Font name="Poppins Regular" size="15.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="47.0" layoutX="53.0" layoutY="462.0" stroke="#43c17a" strokeType="INSIDE" width="685.0" />
-      <ImageView fitHeight="29.0" fitWidth="28.0" layoutX="689.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="47.0" layoutX="49.0" layoutY="462.0" stroke="#43c17a" strokeType="INSIDE" width="656.0" />
+      <ImageView fitHeight="29.0" fitWidth="28.0" layoutX="656.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/cameraIcon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="648.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="615.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/searchIcon.png" />
          </image>
       </ImageView>
-      <JFXTextField focusColor="#405aa800" layoutX="68.0" layoutY="465.0" prefHeight="38.0" prefWidth="569.0" promptText="Search animals" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField focusColor="#405aa800" layoutX="75.0" layoutY="465.0" prefHeight="41.0" prefWidth="529.0" promptText="Search animals" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <ImageView fitHeight="263.0" fitWidth="685.0" layoutX="53.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="247.0" fitWidth="630.0" layoutX="70.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/updateLocationImg.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="317.0" layoutY="735.0" prefHeight="38.0" prefWidth="155.0" styleClass="importButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Upload Image" textFill="WHITE">
+      <JFXButton layoutX="308.0" layoutY="725.0" prefHeight="38.0" prefWidth="155.0" styleClass="importButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Upload Image" textFill="WHITE">
          <font>
             <Font name="Poppins Regular" size="17.0" />
          </font>
