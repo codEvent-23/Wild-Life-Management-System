@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -38,6 +39,20 @@
                 <Image url="@../image/dashboardManageAnimal.png" />
             </image>
         </ImageView>
+        <JFXButton layoutX="521.0" layoutY="356.0" prefHeight="38.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Manage Animal">
+            <font>
+                <Font name="Poppins Regular" size="16.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                    <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#43c17a" offset="0.007246376811594203" />
+                        <Stop color="#0f6e39" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </JFXButton>
         <Rectangle arcWidth="25.0" fill="#daeee3" height="801.0" layoutX="809.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="691.0" />
         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#f4f5f7" height="250.0" layoutX="383.0" layoutY="512.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="331.0">
             <effect>
@@ -83,10 +98,5 @@
          </font>
       </Text>
       <Text layoutX="481.0" layoutY="714.0" opacity="0.39" strokeType="OUTSIDE" strokeWidth="0.0" text="paste image or URL" underline="true" wrappingWidth="135.13623046875" />
-      <Button layoutX="521.0" layoutY="358.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
-         <font>
-            <Font name="Poppins Regular" size="15.0" />
-         </font>
-      </Button>
     </children>
 </AnchorPane>
