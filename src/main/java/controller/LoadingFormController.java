@@ -42,7 +42,7 @@ public class LoadingFormController implements Initializable {
                 loginStage.setResizable(false);
                 Image image = new Image(getClass().getResourceAsStream("/image/icon.png"));
                 loginStage.getIcons().add(image);
-                loginStage.setTitle("Juice Bar Management System - Login Page");
+                loginStage.setTitle("Wildlife Management System - Dashboard Page");
                 loginStage.setScene(loginScene);
                 loginStage.show();
                 ((Stage)progressgBar.getScene().getWindow()).close();

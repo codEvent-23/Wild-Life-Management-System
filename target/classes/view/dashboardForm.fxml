@@ -57,7 +57,7 @@
          </font>
       </Text>
       <Text layoutX="487.0" layoutY="714.0" opacity="0.39" strokeType="OUTSIDE" strokeWidth="0.0" text="paste image or URL" underline="true" wrappingWidth="135.13623046875" />
-      <Button layoutX="521.0" layoutY="358.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
+      <Button layoutX="521.0" layoutY="358.0" mnemonicParsing="false" onAction="#manageAnimalBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Manage Animal">
          <font>
             <Font name="Poppins Regular" size="15.0" />
          </font>

@@ -20,7 +20,7 @@ public class Appinitilizer extends Application {
         stage.initStyle(StageStyle.TRANSPARENT);
         Image image = new Image(getClass().getResourceAsStream("/image/icon.png"));
         stage.getIcons().add(image);
-        stage.setTitle("Animal Searching Management System - Loading Page");
+        stage.setTitle("Wildlife Management System - Loading Page");
         stage.centerOnScreen();
         stage.show();
     }
