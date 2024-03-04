@@ -1,0 +1,8 @@
+.searchButtonInDashboard{
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+.searchButtonInDashboard:hover{
+    -fx-background-color: #cdcdcd;
+}
