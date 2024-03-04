@@ -19,9 +19,9 @@
             </font>
         </Text>
         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="202.0" layoutX="49.0" layoutY="206.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="691.0" />
-        <Text fill="#353a52aa" layoutX="58.0" layoutY="137.0" opacity="0.66" strokeType="OUTSIDE" strokeWidth="0.0" text="You can see here components about this system">
+        <Text fill="#353a52aa" layoutX="58.0" layoutY="128.0" opacity="0.66" strokeType="OUTSIDE" strokeWidth="0.0" text="You can see here components about this system">
             <font>
-                <Font name="Serif Regular" size="16.0" />
+                <Font name="Poppins Regular" size="15.0" />
             </font>
         </Text>
         <Text fill="#353a52" layoutX="74.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wildlife Management">
