@@ -20,4 +20,9 @@
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-border-color: white;
+    -fx-text-box-border: transparent;
+}
+
+.txtSearchInDashboard:focused{
+    -fx-text-box-border: transparent;
 }
