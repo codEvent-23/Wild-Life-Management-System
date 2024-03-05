@@ -9,6 +9,8 @@
 
 .saveButtonInManageAnimalForm{
     -fx-background-color: #0f6e39;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
 }
 .saveButtonInManageAnimalForm:hover{
     -fx-background-color: #0a4a24;
