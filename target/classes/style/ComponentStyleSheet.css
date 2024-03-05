@@ -9,6 +9,8 @@
 
 .saveButtonInManageAnimalForm{
     -fx-background-color: #0f6e39;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
 }
 .saveButtonInManageAnimalForm:hover{
     -fx-background-color: #0a4a24;
@@ -44,10 +46,10 @@
     -fx-border-radius: 10;
 }
 
-.textFieldInDashboard:hover{
-    /*test*/
-}
-
-.textFieldInDashboard:hover{
-    /*test*/
+.textFieldInAnimalManageForm{
+    -fx-background-color: #daeee3;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-color: #353a52;
+    -fx-border-radius: 10;
 }
