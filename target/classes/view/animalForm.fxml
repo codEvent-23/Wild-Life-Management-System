@@ -208,7 +208,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="1164.0" layoutY="726.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: linear-gradient(#43c17a, #0f6e39);" styleClass="searchButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Save" textFill="WHITE">
+      <Button layoutX="1164.0" layoutY="726.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="122.0" styleClass="saveButtonInManageAnimalForm" stylesheets="@../style/ComponentStyleSheet.css" text="Save" textFill="WHITE">
          <font>
             <Font name="Poppins Regular" size="15.0" />
          </font>
