@@ -48,22 +48,38 @@
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
+<<<<<<< HEAD
       <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="319.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Average Weight" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+=======
+      <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="323.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Average Weight" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+>>>>>>> a5f89ffd6e4bd5863a9ff8661a280d067eb02945
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
+<<<<<<< HEAD
       <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="569.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Region" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+=======
+      <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="573.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Region" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+>>>>>>> a5f89ffd6e4bd5863a9ff8661a280d067eb02945
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
+<<<<<<< HEAD
       <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="819.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Conservation Status" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+=======
+      <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="816.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Conservation Status" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+>>>>>>> a5f89ffd6e4bd5863a9ff8661a280d067eb02945
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
+<<<<<<< HEAD
       <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="1069.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Breeding" style="-fx-background-color: #daeee3; -fx-background-radius: 10; -fx-border-width: 1; -fx-border-color: #353a52; -fx-border-radius: 10;" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+=======
+      <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="1073.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Breeding" style="-fx-background-color: #daeee3; -fx-background-radius: 10; -fx-border-width: 1; -fx-border-color: #353a52; -fx-border-radius: 10;" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+>>>>>>> a5f89ffd6e4bd5863a9ff8661a280d067eb02945
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
@@ -93,7 +109,11 @@
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
+<<<<<<< HEAD
       <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="703.0" layoutY="410.0" prefHeight="44.0" prefWidth="570.0" promptText=" Location" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+=======
+      <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="700.0" layoutY="410.0" prefHeight="44.0" prefWidth="570.0" promptText=" Location" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+>>>>>>> a5f89ffd6e4bd5863a9ff8661a280d067eb02945
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
