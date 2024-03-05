@@ -43,3 +43,7 @@
     -fx-border-color: #353a52;
     -fx-border-radius: 10;
 }
+
+.textFieldInDashboard:hover{
+    /*test*/
+}
