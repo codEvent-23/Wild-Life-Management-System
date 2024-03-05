@@ -71,7 +71,7 @@
             <Font name="Poppins Regular" size="17.0" />
          </font>
       </JFXButton>
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="832.0" layoutY="94.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="828.0" layoutY="94.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
       <Circle fill="WHITE" layoutX="969.0" layoutY="201.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="881.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -93,7 +93,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="1123.0" layoutY="94.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="1119.0" layoutY="94.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
       <Circle fill="WHITE" layoutX="1260.0" layoutY="201.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="1172.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -115,7 +115,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="830.0" layoutY="475.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="826.0" layoutY="475.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
       <Circle fill="WHITE" layoutX="967.0" layoutY="582.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="879.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -137,7 +137,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="1123.0" layoutY="475.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="1119.0" layoutY="475.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
       <Circle fill="WHITE" layoutX="1260.0" layoutY="582.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="1172.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
          <image>
