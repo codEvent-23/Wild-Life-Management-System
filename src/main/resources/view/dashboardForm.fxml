@@ -75,7 +75,7 @@
       <Circle fill="WHITE" layoutX="969.0" layoutY="201.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="881.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/Pomeranian-featured-2-fotor-2024030416352.png" />
+            <Image url="@../image/dog.png" />
          </image>
       </ImageView>
       <Text fill="#353a52" layoutX="948.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dog">
@@ -97,7 +97,7 @@
       <Circle fill="WHITE" layoutX="1260.0" layoutY="201.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="1172.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/white-hotot-rabbit-eating-grass-509265984-5c0da06546e0fb0001366ac0-fotor-20240304192547.png" />
+            <Image url="@../image/rabbit.png" />
          </image>
       </ImageView>
       <Text fill="#353a52" layoutX="1223.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rabbit">
@@ -119,7 +119,7 @@
       <Circle fill="WHITE" layoutX="967.0" layoutY="582.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="879.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/Picture2-fotor-20240304193045.png" />
+            <Image url="@../image/parrot.png" />
          </image>
       </ImageView>
       <Text fill="#353a52" layoutX="932.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parrot">
@@ -141,7 +141,7 @@
       <Circle fill="WHITE" layoutX="1260.0" layoutY="582.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="1172.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/d2d931c8bd297a9324e84051c4b9f6be-fotor-2024030419363.png" />
+            <Image url="@../image/horse.png" />
          </image>
       </ImageView>
       <Text fill="#353a52" layoutX="1229.0" layoutY="719.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horse">
