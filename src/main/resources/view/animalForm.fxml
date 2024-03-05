@@ -98,7 +98,7 @@
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextArea labelFloat="true" layoutX="63.0" layoutY="480.0" prefHeight="112.0" prefWidth="1211.0" promptText=" Add More Details" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" wrapText="true">
+      <JFXTextArea labelFloat="true" layoutX="63.0" layoutY="480.0" prefHeight="112.0" prefWidth="1211.0" promptText=" Add More Details" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00" wrapText="true">
          <font>
             <Font size="19.0" />
          </font>
