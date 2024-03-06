@@ -3,14 +3,21 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class DashboardFormController {
+public class DashboardFormController implements Initializable {
+
+    @FXML
+    private AnchorPane animalDetailsAnchorPane;
+
     public Button btnManageAnimal;
 
     boolean formOpened = false;
@@ -34,5 +41,15 @@ public class DashboardFormController {
             formOpened = false;
             btnManageAnimal.setDisable(false);
         });
+    }
+
+    @FXML
+    void uploadImgBtnOnAction(ActionEvent event) {
+        animalDetailsAnchorPane.setVisible(true);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        animalDetailsAnchorPane.setVisible(false);
     }
 }
