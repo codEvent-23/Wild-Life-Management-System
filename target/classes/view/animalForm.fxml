@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Button?>
@@ -63,7 +64,7 @@
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="1114.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Breeding" style="-fx-background-color: #daeee3; -fx-background-radius: 10; -fx-border-width: 1; -fx-border-color: #353a52; -fx-border-radius: 10;" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="1114.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Reproduction" style="-fx-background-color: #daeee3; -fx-background-radius: 10; -fx-border-width: 1; -fx-border-color: #353a52; -fx-border-radius: 10;" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
@@ -93,11 +94,7 @@
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField focusColor="#353a52" labelFloat="true" layoutX="741.0" layoutY="410.0" prefHeight="44.0" prefWidth="570.0" promptText=" Location" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
-         <font>
-            <Font name="Poppins Regular" size="19.0" />
-         </font>
-      </JFXTextField>
+      <JFXComboBox layoutX="741.0" layoutY="410.0" prefHeight="44.0" prefWidth="518.0" promptText=" Location" styleClass="comboboxInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00" />
       <JFXTextArea labelFloat="true" layoutX="104.0" layoutY="480.0" prefHeight="112.0" prefWidth="1211.0" promptText=" Add More Details" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00" wrapText="true">
          <font>
             <Font size="19.0" />
@@ -160,5 +157,10 @@
             <Font name="Poppins Regular" size="17.0" />
          </font>
       </Button>
+      <ImageView fitHeight="38.0" fitWidth="36.0" layoutX="1274.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/addIcon.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
