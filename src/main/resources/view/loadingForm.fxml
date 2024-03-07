@@ -14,7 +14,7 @@
             <Image url="@../image/loadingFormImg.png" />
          </image>
       </ImageView>
-      <ProgressBar fx:id="progressgBar" layoutX="91.0" layoutY="637.0" prefHeight="23.0" prefWidth="639.0" progress="0.0" stylesheets="@../style/progressBar.css" />
+      <ProgressBar fx:id="progressBar" layoutX="91.0" layoutY="637.0" prefHeight="23.0" prefWidth="639.0" progress="0.0" stylesheets="@../style/progressBar.css" />
       <ImageView fitHeight="116.0" fitWidth="120.0" layoutX="340.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/bird.gif" />

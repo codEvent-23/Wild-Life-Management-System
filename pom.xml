@@ -6,8 +6,8 @@
 
     <groupId>lk.ijse</groupId>
     <artifactId>animalsSeaching</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>animalsSeaching</name>
+    <version>1.0.0</version>
+    <name>animalsSearching</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,6 +15,7 @@
     </properties>
 
     <dependencies>
+        <!-- Dependency for Openjfx -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -39,7 +40,7 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <!-- Dependency for Jfoenix-->
         <dependency>
             <groupId>com.jfoenix</groupId>
             <artifactId>jfoenix</artifactId>
