@@ -39,7 +39,7 @@
                 <Font name="Poppins Regular" size="14.0" />
             </font>
         </Text>
-        <ImageView fitHeight="229.0" fitWidth="249.0" layoutX="444.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imgDashboardLogo" fitHeight="229.0" fitWidth="249.0" layoutX="444.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../image/dashboardManageAnimal.png" />
             </image>
