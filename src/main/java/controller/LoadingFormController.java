@@ -46,7 +46,7 @@ public class LoadingFormController implements Initializable {
         task.setOnSucceeded(event -> {
             try {
                 // Load the dashboard FXML file
-                Parent loginParent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/dashboardForm.fxml")));
+                Parent loginParent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/loginForm.fxml")));
                 // Create a new scene for the dashboard
                 Scene loginScene = new Scene(loginParent);
                 // Create a new stage for the dashboard

@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -16,6 +17,7 @@ import java.util.ResourceBundle;
 // Controller class for the DashboardForm.fxml
 public class DashboardFormController implements Initializable {
 
+    public ImageView imgDashboardLogo;
     // Reference to the AnchorPane defined in the FXML file
     @FXML
     private AnchorPane animalDetailsAnchorPane;
@@ -73,5 +75,10 @@ public class DashboardFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Set the animalDetailsAnchorPane to be initially invisible
         animalDetailsAnchorPane.setVisible(false);
+    }
+
+    public void setUser() {
+        btnManageAnimal.setVisible(false);
+        imgDashboardLogo.setY(30);
     }
 }
