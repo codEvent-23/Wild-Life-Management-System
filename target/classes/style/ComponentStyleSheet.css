@@ -41,9 +41,9 @@
 .textFieldInDashboard{
     -fx-background-color: #daeee3;
     -fx-background-radius: 10;
+    -fx-border-radius: 10;
     -fx-border-width: 1;
     -fx-border-color: #353a52;
-    -fx-border-radius: 10;
 }
 
 .textFieldInAnimalManageForm{
@@ -61,4 +61,14 @@
     -fx-border-color: #353a52;
     -fx-border-radius: 10;
     -fx-font-size: 19;
+}
+
+.loginFormButton{
+    -fx-background-color: #38a367;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.loginFormButton:hover{
+    -fx-background-color: #28734c;
 }
