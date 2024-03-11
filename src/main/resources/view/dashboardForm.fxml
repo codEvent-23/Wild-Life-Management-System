@@ -75,46 +75,46 @@
             <Font name="Poppins Regular" size="17.0" />
          </font>
       </JFXButton>
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="788.0" layoutY="94.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
-      <Circle fill="WHITE" layoutX="929.0" layoutY="201.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="841.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="788.0" layoutY="114.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Circle fill="WHITE" layoutX="929.0" layoutY="221.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="841.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/dog.png" />
          </image>
       </ImageView>
-      <Text fill="#353a52" layoutX="908.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dog">
+      <Text fill="#353a52" layoutX="908.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dog">
          <font>
             <Font name="SansSerif Regular" size="27.0" />
          </font>
       </Text>
-      <Text fill="#353a52" layoutX="826.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A wildlife management" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+      <Text fill="#353a52" layoutX="826.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A wildlife management" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fill="#353a52" layoutX="826.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="four legs gf dgdsg" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+      <Text fill="#353a52" layoutX="826.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="four legs gf dgdsg" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="1109.0" layoutY="94.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
-      <Circle fill="WHITE" layoutX="1250.0" layoutY="201.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="1162.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#43c17a" height="319.0" layoutX="1109.0" layoutY="114.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Circle fill="WHITE" layoutX="1250.0" layoutY="221.0" radius="93.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <ImageView fitHeight="210.0" fitWidth="176.0" layoutX="1162.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/rabbit.png" />
          </image>
       </ImageView>
-      <Text fill="#353a52" layoutX="1213.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rabbit">
+      <Text fill="#353a52" layoutX="1213.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rabbit">
          <font>
             <Font name="SansSerif Regular" size="27.0" />
          </font>
       </Text>
-      <Text fill="#353a52" layoutX="1147.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A wildlife management" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+      <Text fill="#353a52" layoutX="1147.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A wildlife management" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fill="#353a52" layoutX="1147.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="four legs gf dgdsg" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
+      <Text fill="#353a52" layoutX="1147.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="four legs gf dgdsg" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
          <font>
             <Font size="20.0" />
          </font>
@@ -158,12 +158,24 @@
             <Font size="20.0" />
          </font>
       </Text>
+      <Button fx:id="btnLogout1" graphicTextGap="20.0" layoutX="1196.0" layoutY="33.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #353a52;" styleClass="loginFormButton" stylesheets="@../style/ComponentStyleSheet.css" text="Go to login page" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
       <Text fill="#353a52" layoutX="1147.0" layoutY="773.0" strokeType="OUTSIDE" strokeWidth="0.0" text="four legs gf dgdsg" textAlignment="JUSTIFY" wrappingWidth="208.49999226629734">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <AnchorPane fx:id="animalDetailsAnchorPane" layoutX="748.0" prefHeight="870.0" prefWidth="656.0" style="-fx-background-color: #daeee3;">
+      <AnchorPane fx:id="animalDetailsAnchorPane" layoutX="748.0" prefHeight="743.0" prefWidth="672.0" style="-fx-background-color: #daeee3;">
          <children>
             <Text fill="#353a52" layoutX="86.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Animal Management Form">
                <font>
@@ -233,17 +245,5 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button fx:id="btnLogout" graphicTextGap="20.0" layoutX="21.0" layoutY="794.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="42.0" prefWidth="120.0" styleClass="loginFormButton" stylesheets="@../style/ComponentStyleSheet.css" text="Logout" textFill="WHITE">
-         <font>
-            <Font name="Poppins Regular" size="15.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="28.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/logout.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
     </children>
 </AnchorPane>
