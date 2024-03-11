@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -18,6 +19,8 @@ import java.util.ResourceBundle;
 public class DashboardFormController implements Initializable {
 
     public ImageView imgDashboardLogo;
+    public Button btnLogout;
+    public AnchorPane dashboardForm;
     // Reference to the AnchorPane defined in the FXML file
     @FXML
     private AnchorPane animalDetailsAnchorPane;
@@ -80,5 +83,14 @@ public class DashboardFormController implements Initializable {
     public void setUser() {
         btnManageAnimal.setVisible(false);
         imgDashboardLogo.setY(30);
+    }
+
+    public void btnLogoutOnAction(ActionEvent actionEvent) throws IOException {
+        Parent loginForm = FXMLLoader.load(getClass().getResource("/view/loginForm.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(loginForm));
+        stage.centerOnScreen();
+        stage.show();
+        dashboardForm.getScene().getWindow().hide();
     }
 }

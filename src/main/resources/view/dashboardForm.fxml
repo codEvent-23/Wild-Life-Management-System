@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="870.0" prefWidth="1420.0" style="-fx-background-color: #f4f5f7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardFormController">
+<AnchorPane fx:id="dashboardForm" prefHeight="870.0" prefWidth="1420.0" style="-fx-background-color: #f4f5f7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardFormController">
     <children>
         <Text fill="#353a52" layoutX="53.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
             <font>
@@ -227,5 +227,17 @@
             </ScrollPane>
          </children>
       </AnchorPane>
+      <Button fx:id="btnLogout" graphicTextGap="20.0" layoutX="21.0" layoutY="794.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="42.0" prefWidth="120.0" styleClass="loginFormButton" stylesheets="@../style/ComponentStyleSheet.css" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>

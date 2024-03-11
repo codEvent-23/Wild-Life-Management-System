@@ -24,6 +24,7 @@ public class LoginFormController {
         Scene loginScene = new Scene(loginParent);
         Stage window = (Stage) btnAdmin.getScene().getWindow();
         window.setScene(loginScene);
+        window.centerOnScreen();
         window.show();
     }
 
