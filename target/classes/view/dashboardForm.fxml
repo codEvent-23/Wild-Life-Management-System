@@ -170,7 +170,7 @@
                   <Font name="SansSerif Regular" size="42.0" />
                </font>
             </Text>
-            <ScrollPane hbarPolicy="NEVER" layoutY="164.0" prefHeight="716.0" prefWidth="672.0" style="-fx-background-color: #daeee3;">
+            <ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutY="164.0" prefHeight="716.0" prefWidth="672.0" style="-fx-background-color: #daeee3;">
                <content>
                   <VBox prefHeight="1436.0" prefWidth="670.0" style="-fx-background-color: #daeee3;">
                      <children>
@@ -215,7 +215,7 @@
                         <HBox layoutX="10.0" layoutY="257.0" prefHeight="943.0" prefWidth="670.0">
                            <children>
                               <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#daeee3" height="44.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="17.0" />
-                              <Label prefHeight="121.0" prefWidth="621.0" text="The Wildlife Management System employs JavaFX and MongoDB, leveraging Object-Oriented Programming for seamless information management of diverse wildlife species. With a user-friendly interface, it offers a loading page, a dynamic dashboard for searching and managing animals, detailed information retrieval, and image recognition capabilities." textAlignment="JUSTIFY" wrapText="true">
+                              <Label fx:id="lblDetails" prefHeight="121.0" prefWidth="621.0" text="The Wildlife Management System employs JavaFX and MongoDB, leveraging Object-Oriented Programming for seamless information management of diverse wildlife species. With a user-friendly interface, it offers a loading page, a dynamic dashboard for searching and managing animals, detailed information retrieval, and image recognition capabilities." textAlignment="JUSTIFY" wrapText="true">
                                  <font>
                                     <Font name="Poppins Regular" size="14.0" />
                                  </font>
@@ -226,6 +226,11 @@
                   </VBox>
                </content>
             </ScrollPane>
+            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="619.0" layoutY="110.0" onMouseClicked="#closeOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/close.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <Button fx:id="btnLogout" graphicTextGap="20.0" layoutX="21.0" layoutY="794.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="42.0" prefWidth="120.0" styleClass="loginFormButton" stylesheets="@../style/ComponentStyleSheet.css" text="Logout" textFill="WHITE">

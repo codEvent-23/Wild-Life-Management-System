@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -92,5 +93,9 @@ public class DashboardFormController implements Initializable {
         stage.centerOnScreen();
         stage.show();
         dashboardForm.getScene().getWindow().hide();
+    }
+
+    public void closeOnMouseClicked(MouseEvent mouseEvent) {
+        animalDetailsAnchorPane.setVisible(false);
     }
 }
