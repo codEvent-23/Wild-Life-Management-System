@@ -220,7 +220,7 @@
                         <HBox fx:id="mapHBox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="213.0" prefHeight="239.0" prefWidth="670.0">
                            <children>
                               <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#daeee3" height="44.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="30.0" />
-                              <Rectangle arcHeight="25.0" arcWidth="25.0" fill="WHITE" height="199.0" stroke="BLACK" strokeType="INSIDE" width="585.0" />
+                              <Rectangle arcHeight="25.0" arcWidth="25.0" fill="WHITE" height="199.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="585.0" />
                            </children>
                         </HBox>
                      </children>
