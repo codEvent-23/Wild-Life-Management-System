@@ -25,6 +25,7 @@ public class LoginFormController {
         Stage window = (Stage) btnAdmin.getScene().getWindow();
         window.setScene(loginScene);
         window.centerOnScreen();
+        window.setTitle("Wildlife Management System - Admin Dashboard Page");
         window.show();
     }
 
@@ -39,6 +40,7 @@ public class LoginFormController {
         Stage window = (Stage) btnUser.getScene().getWindow();
         window.setScene(scene);
         window.centerOnScreen();
+        window.setTitle("Wildlife Management System - User Dashboard Page");
         window.show();
     }
 }

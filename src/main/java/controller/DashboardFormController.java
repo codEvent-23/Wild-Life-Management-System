@@ -136,6 +136,7 @@ public class DashboardFormController implements Initializable {
         stage.setScene(new Scene(loginForm));
         stage.centerOnScreen();
         stage.show();
+        stage.setTitle("Wildlife Management System - Login Page");
         dashboardForm.getScene().getWindow().hide();
     }
 
