@@ -17,9 +17,9 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        /*Parent load = FXMLLoader.load(getClass().getResource("/dashboardform.fxml"));
+        Parent load = FXMLLoader.load(getClass().getResource("/dashboardform.fxml"));
         stage.setTitle("Wild Life Management System");
         stage.setScene(new Scene(load));
-        stage.show();*/
+        stage.show();
     }
 }
