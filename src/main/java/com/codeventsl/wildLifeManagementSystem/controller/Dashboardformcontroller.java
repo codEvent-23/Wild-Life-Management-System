@@ -32,7 +32,7 @@ public class Dashboardformcontroller implements Initializable {
 
     @FXML
     void searchBtnOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        /*String name = textFeild.getText();
+        String name = textFeild.getText();
         ArrayList<Location> locations = Animal.searchAnimalId(name);
 
         StringBuilder jsArray = new StringBuilder("[");
@@ -50,7 +50,7 @@ public class Dashboardformcontroller implements Initializable {
 
         // Load an initial map (you may change this depending on your requirements)
         String htmlFile = getClass().getResource("/index.html").toExternalForm();
-        webEngine.load(htmlFile);*/
+        webEngine.load(htmlFile);
     }
 
     @FXML
@@ -60,7 +60,7 @@ public class Dashboardformcontroller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       /* // Initialize the WebEngine
-        webEngine = webView.getEngine();*/
+        // Initialize the WebEngine
+        webEngine = webView.getEngine();
     }
 }
