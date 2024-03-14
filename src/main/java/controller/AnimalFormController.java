@@ -12,6 +12,8 @@ import javafx.scene.control.TextInputControl;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import model.AnimalModel;
 
 import java.io.ByteArrayInputStream;
@@ -124,7 +126,33 @@ public class AnimalFormController {
             if (intPattern.matcher(txtLifeTime.getText()).matches()) {
                 if (doublePattern.matcher(txtWeight.getText()).matches()) {
                     if (images.size() == 3) {
+                        if (AnimalModel.saveAnimal(new Animal(
+                                txtAnimalId.getText(),
+                                txtSpecies.getText(),
+                                txtCommonName.getText(),
+                                txtScientificName.getText(),
+                                txtGender.getText(),
+                                Integer.parseInt(txtLifeTime.getText()),
+                                Double.parseDouble(txtWeight.getText()),
+                                txtRegion.getText(),
+                                txtConservationStatus.getText(),
+                                txtReproduction.getText(),
+                                txtColor.getText(),
+                                txtMarkings.getText(),
+                                txtHabitat.getText(),
+                                txtBehavior.getText(),
+                                txtDietaryPreferences.getText(),
+                                txtAdditionalDetails.getText(),
+                                images
+                        ))) {
 
+                            new Alert(Alert.AlertType.CONFIRMATION, "Animal saved sucessfully!").show();
+                            Stage stage = (Stage) txtAnimalId.getScene().getWindow();
+                            stage.close();
+
+                        } else {
+                            new Alert(Alert.AlertType.WARNING, "Animal saved unsucessfully!").show();
+                        }
                     } else {
                         new Alert(Alert.AlertType.WARNING, "Please upload 3 images.").show();
                     }
