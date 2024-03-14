@@ -83,7 +83,11 @@ public class DashboardFormController implements Initializable {
     // Method to open the Animal Form
     private void openAnimalForm() throws IOException {
         // Load the Animal Form FXML file
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/animalForm.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/animalForm.fxml"));
+        AnchorPane anchorPane = loader.load();
+        AnimalFormController animalFormController = loader.getController();
+        animalFormController.setController(this);
+
         // Create a new stage for the Animal Form
         Stage stage = new Stage();
         // Set the scene for the Animal Form stage
@@ -113,7 +117,7 @@ public class DashboardFormController implements Initializable {
         Label tital = new Label("(Animal Name)");
         tital.setFont(new Font("Poppins", 20));
 
-        Label detail = new Label("\n"+"The Wildlife Management System employs JavaFX and MongoDB, leveraging " +
+        Label detail = new Label("\n" + "The Wildlife Management System employs JavaFX and MongoDB, leveraging " +
                 "Object-Oriented Programming for seamless information management of diverse wildlife species. With " +
                 "a user-friendly interface, it offers a loading page, a dynamic dashboard for searching and managing " +
                 "animals, detailed information retrieval, and image recognition capabilities.\n\nThe Wildlife Management " +
@@ -167,14 +171,14 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     void searchBtnOnAction(ActionEvent event) {
-        if (!txtSearch.getText().isEmpty()){
+        if (!txtSearch.getText().isEmpty()) {
             Animal animal = AnimalModel.searchAnimal(txtSearch.getText());
-            if (animal != null){
+            if (animal != null) {
                 showSearchResult(animal);
-            }else {
+            } else {
                 new Alert(Alert.AlertType.WARNING, "Couldn't find the animal.").show();
             }
-        }else{
+        } else {
             new Alert(Alert.AlertType.WARNING, "Please enter the name of animal").show();
         }
     }
@@ -184,6 +188,15 @@ public class DashboardFormController implements Initializable {
         searchBtnOnAction(event);
     }
 
+    public void searchByAnimalForm(String term) {
+        Animal animal = AnimalModel.searchAnimal(term);
+        if (animal != null) {
+            showSearchResult(animal);
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Couldn't find the animal.").show();
+        }
+    }
+
     private void showSearchResult(Animal animal) {
         animalDetailsAnchorPane.setVisible(true);
         mainVBox.getChildren().clear();
@@ -191,7 +204,7 @@ public class DashboardFormController implements Initializable {
         List<ImageView> imageViews = new ArrayList<>();
         Collections.addAll(imageViews, imageView1, imageView2, imageView3);
 
-        for (int i = 0; i < animal.getImages().size(); i++){
+        for (int i = 0; i < animal.getImages().size(); i++) {
             byte[] imageData = animal.getImages().get(i);
             imageViews.get(i).setImage(new Image(new ByteArrayInputStream(imageData)));
         }

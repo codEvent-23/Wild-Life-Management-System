@@ -13,7 +13,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import model.AnimalModel;
 
 import java.io.ByteArrayInputStream;
@@ -103,6 +102,8 @@ public class AnimalFormController {
 
     private static final Pattern doublePattern = Pattern.compile("^[0-9]+\\.?[0-9]*$");
 
+    private DashboardFormController dashboardFormController;
+
     @FXML
     void ImageUpload1OnAction(ActionEvent event) {
         handleImageUpload(image1, imageUploadBtn1);
@@ -167,6 +168,22 @@ public class AnimalFormController {
         }
     }
 
+    @FXML
+    void searchBtnOnAction(ActionEvent event) {
+        if (!txtSearch.getText().isEmpty()){
+            dashboardFormController.searchByAnimalForm(txtSearch.getText());
+            Stage stage = (Stage) txtAnimalId.getScene().getWindow();
+            stage.close();
+        }else {
+            new Alert(Alert.AlertType.WARNING, "Please enter the name of animal").show();
+        }
+    }
+
+    @FXML
+    void txtSearchOnAction(ActionEvent event) {
+        searchBtnOnAction(event);
+    }
+
     private void handleImageUpload(ImageView imageView, JFXButton button) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Image");
@@ -198,4 +215,7 @@ public class AnimalFormController {
         return true;
     }
 
+    public void setController(DashboardFormController dashboardFormController) {
+        this.dashboardFormController = dashboardFormController;
+    }
 }

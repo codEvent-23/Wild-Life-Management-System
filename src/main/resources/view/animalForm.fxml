@@ -127,12 +127,7 @@
             <Image url="@../image/cameraIcon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="1223.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/searchIcon.png" />
-         </image>
-      </ImageView>
-      <JFXTextField fx:id="txtSearch" focusColor="#405aa800" layoutX="789.0" layoutY="31.0" prefHeight="42.0" prefWidth="386.0" promptText="Search animals" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField fx:id="txtSearch" focusColor="#405aa800" layoutX="789.0" layoutY="31.0" onAction="#txtSearchOnAction" prefHeight="42.0" prefWidth="386.0" promptText="Search animals" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
@@ -162,5 +157,14 @@
             <Image url="@../image/addIcon.png" />
          </image>
       </ImageView>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="1209.0" layoutY="32.0" onAction="#searchBtnOnAction">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/searchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>
