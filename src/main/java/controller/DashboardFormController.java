@@ -1,5 +1,7 @@
 package controller;
 
+import com.jfoenix.controls.JFXTextField;
+import entity.Animal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -19,6 +22,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import model.AnimalModel;
 
 import java.io.IOException;
 import java.net.URL;
@@ -38,6 +42,9 @@ public class DashboardFormController implements Initializable {
     public HBox imgHBox;
     public VBox mainVBox;
     public ScrollPane mainScrollPane;
+
+    @FXML
+    private JFXTextField txtSearch;
     // Reference to the AnchorPane defined in the FXML file
     @FXML
     private AnchorPane animalDetailsAnchorPane;
@@ -142,5 +149,68 @@ public class DashboardFormController implements Initializable {
 
     public void closeOnMouseClicked(MouseEvent mouseEvent) {
         animalDetailsAnchorPane.setVisible(false);
+    }
+
+    @FXML
+    void searchBtnOnAction(ActionEvent event) {
+        if (!txtSearch.getText().isEmpty()){
+            Animal animal = AnimalModel.searchAnimal(txtSearch.getText());
+            if (animal != null){
+                animalDetailsAnchorPane.setVisible(true);
+                mainVBox.getChildren().clear();
+
+                Label title = new Label(animal.getCommon_name());
+                title.setFont(new Font("Poppins", 28));
+                title.setStyle("-fx-font-weight: bold;");
+
+                HBox hBox = new HBox();
+                hBox.setSpacing(50);
+                Label scientificName = new Label("Scientific name: " + animal.getScientific_name());
+                scientificName.setFont(new Font("Poppins", 18));
+                hBox.getChildren().add(scientificName);
+                Label gender = new Label("Gender: " + animal.getGender());
+                gender.setFont(new Font("Poppins", 18));
+                hBox.getChildren().add(gender);
+
+                HBox hBox2 = new HBox();
+                hBox2.setSpacing(50);
+                Label weight = new Label("Average weight: " + animal.getAverage_weight());
+                weight.setFont(new Font("Poppins", 18));
+                hBox2.getChildren().add(weight);
+                Label lifeTime = new Label("Average lifetime: " + animal.getAverage_life_time());
+                lifeTime.setFont(new Font("Poppins", 18));
+                hBox2.getChildren().add(lifeTime);
+                Label region = new Label("Region : " + animal.getRegion());
+                region.setFont(new Font("Poppins", 18));
+                hBox2.getChildren().add(region);
+
+                Label detail = new Label(animal.getAdditional_details());
+                detail.setWrapText(true);
+                detail.setTextAlignment(TextAlignment.JUSTIFY);
+                detail.setFont(new Font("Calibri", 14));
+                VBox.setMargin(detail, new Insets(10, 0, 0, 0));
+                VBox detailWrapper = new VBox();
+                detailWrapper.getChildren().add(detail);
+
+                HBox hBox4 = new HBox();
+                mainVBox.setPadding(new Insets(20, 30, 20, 20));
+                hBox4.getChildren().add(detailWrapper);
+
+                mainVBox.getChildren().addAll(
+                        imgHBox, CommonLocationHBox, mapHBox,
+                        title, hBox, hBox2, hBox4
+                );
+
+            }else {
+                new Alert(Alert.AlertType.WARNING, "Couldn't find the animal.").show();
+            }
+        }else{
+            new Alert(Alert.AlertType.WARNING, "Please enter the name of animal").show();
+        }
+    }
+
+    @FXML
+    void txtSearchOnAction(ActionEvent event) {
+
     }
 }
