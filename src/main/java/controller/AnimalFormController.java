@@ -4,17 +4,23 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import entity.Animal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextInputControl;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import model.AnimalModel;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class AnimalFormController {
     @FXML
@@ -33,19 +39,19 @@ public class AnimalFormController {
     private JFXTextField txtGender;
 
     @FXML
-    private JFXTextField lifeTime;
+    private JFXTextField txtLifeTime;
 
     @FXML
-    private JFXTextField weight;
+    private JFXTextField txtWeight;
 
     @FXML
-    private JFXTextField region;
+    private JFXTextField txtRegion;
 
     @FXML
-    private JFXTextField conservationStatus;
+    private JFXTextField txtConservationStatus;
 
     @FXML
-    private JFXTextField reProduction;
+    private JFXTextField txtReproduction;
 
     @FXML
     private JFXTextField txtColor;
@@ -91,6 +97,10 @@ public class AnimalFormController {
 
     private final List<byte[]> images = new ArrayList<>();
 
+    private static final Pattern intPattern = Pattern.compile("^[1-9][0-9]?$|^100$");
+
+    private static final Pattern doublePattern = Pattern.compile("^[0-9]+\\.?[0-9]*$");
+
     @FXML
     void ImageUpload1OnAction(ActionEvent event) {
         handleImageUpload(image1, imageUploadBtn1);
@@ -108,10 +118,28 @@ public class AnimalFormController {
 
     @FXML
     void saveBtnOnAction(ActionEvent event) {
+        if (validateFields(txtAnimalId, txtSpecies, txtCommonName, txtScientificName, txtGender,
+                txtLifeTime, txtWeight, txtRegion, txtConservationStatus, txtReproduction, txtColor,
+                txtMarkings, txtHabitat, txtBehavior, txtDietaryPreferences, txtAdditionalDetails)) {
+            if (intPattern.matcher(txtLifeTime.getText()).matches()) {
+                if (doublePattern.matcher(txtWeight.getText()).matches()) {
+                    if (images.size() == 3) {
 
+                    } else {
+                        new Alert(Alert.AlertType.WARNING, "Please upload 3 images.").show();
+                    }
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Average Weight should be a number.").show();
+                }
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Average Lifetime should be a integer.").show();
+            }
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Please fill in all fields.").show();
+        }
     }
 
-    private void handleImageUpload(ImageView imageView, JFXButton button){
+    private void handleImageUpload(ImageView imageView, JFXButton button) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Image");
         fileChooser.getExtensionFilters().addAll(
@@ -131,6 +159,15 @@ public class AnimalFormController {
             }
         }
 
+    }
+
+    private boolean validateFields(TextInputControl... fields) {
+        for (TextInputControl field : fields) {
+            if (field.getText().isEmpty()) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

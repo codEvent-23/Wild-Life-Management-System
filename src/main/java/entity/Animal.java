@@ -16,7 +16,7 @@ import java.util.List;
 public class Animal {
 
     @Id
-    private ObjectId id;
+    private String id;
     private String species;
     private String common_name;
     private String scientific_name;
@@ -31,7 +31,6 @@ public class Animal {
     private String habitat;
     private String behavior;
     private String dietary_preferences;
-    private String location;
     private String additional_details;
     private List<byte[]> images;
 

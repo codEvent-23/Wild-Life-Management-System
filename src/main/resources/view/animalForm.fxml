@@ -44,27 +44,27 @@
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="lifeTime" focusColor="#353a52" labelFloat="true" layoutX="104.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Average Life Time" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField fx:id="txtLifeTime" focusColor="#353a52" labelFloat="true" layoutX="104.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Average Life Time" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="weight" focusColor="#353a52" labelFloat="true" layoutX="364.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Average Weight" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField fx:id="txtWeight" focusColor="#353a52" labelFloat="true" layoutX="364.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Average Weight" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="region" focusColor="#353a52" labelFloat="true" layoutX="614.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Region" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField fx:id="txtRegion" focusColor="#353a52" labelFloat="true" layoutX="614.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Region" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="conservationStatus" focusColor="#353a52" labelFloat="true" layoutX="857.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Conservation Status" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField fx:id="txtConservationStatus" focusColor="#353a52" labelFloat="true" layoutX="857.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Conservation Status" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="reProduction" focusColor="#353a52" labelFloat="true" layoutX="1114.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Reproduction" style="-fx-background-color: #daeee3; -fx-background-radius: 10; -fx-border-width: 1; -fx-border-color: #353a52; -fx-border-radius: 10;" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField fx:id="txtReproduction" focusColor="#353a52" labelFloat="true" layoutX="1114.0" layoutY="192.0" prefHeight="44.0" prefWidth="202.0" promptText=" Reproduction" style="-fx-background-color: #daeee3; -fx-background-radius: 10; -fx-border-width: 1; -fx-border-color: #353a52; -fx-border-radius: 10;" styleClass="txtSearchInDashboard" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>

@@ -30,7 +30,7 @@ public class DBConnection {
         return Holder.INSTANCE;
     }
 
-    public static Datastore getDatastore() {
+    public Datastore getDatastore() {
         return datastore;
     }
 }
