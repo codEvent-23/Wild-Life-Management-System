@@ -183,19 +183,19 @@
                         <HBox fx:id="imgHBox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="747.0" prefHeight="203.0" prefWidth="670.0">
                            <children>
                               <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#daeee3" height="44.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="30.0" />
-                              <ImageView fitHeight="168.0" fitWidth="176.0" pickOnBounds="true">
+                              <ImageView fx:id="imageView1" fitHeight="168.0" fitWidth="176.0" pickOnBounds="true">
                                  <image>
                                     <Image url="@../image/updateLocationImgInAnimalForm.png" />
                                  </image>
                               </ImageView>
                               <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#daeee3" height="44.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="30.0" />
-                              <ImageView fitHeight="168.0" fitWidth="176.0" pickOnBounds="true">
+                              <ImageView fx:id="imageView2" fitHeight="168.0" fitWidth="176.0" pickOnBounds="true">
                                  <image>
                                     <Image url="@../image/updateLocationImgInAnimalForm.png" />
                                  </image>
                               </ImageView>
                               <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#daeee3" height="44.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="30.0" />
-                              <ImageView fitHeight="168.0" fitWidth="176.0" pickOnBounds="true">
+                              <ImageView fx:id="imageView3" fitHeight="168.0" fitWidth="176.0" pickOnBounds="true">
                                  <image>
                                     <Image url="@../image/updateLocationImgInAnimalForm.png" />
                                  </image>
@@ -229,7 +229,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="599.0" layoutY="465.0" onAction="#searchBtnOnAction">
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="599.0" layoutY="465.0">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
