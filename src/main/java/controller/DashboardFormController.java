@@ -229,13 +229,13 @@ public class DashboardFormController implements Initializable {
         VBox detailWrapper = new VBox();
         detailWrapper.getChildren().add(detail);
 
-        HBox hBox4 = new HBox();
+        HBox hBox3 = new HBox();
         mainVBox.setPadding(new Insets(20, 30, 20, 20));
-        hBox4.getChildren().add(detailWrapper);
+        hBox3.getChildren().add(detailWrapper);
 
         mainVBox.getChildren().addAll(
                 imgHBox, CommonLocationHBox, mapHBox,
-                title, hBox, hBox2, hBox4
+                title, hBox, hBox2, hBox3
         );
     }
 }

@@ -10,11 +10,7 @@ public class DBConnection {
     private static final String DATABASE_NAME = "wild_life";
     private static MongoClient mongoClient;
     private static Datastore datastore;
-
-    // Holder pattern for lazy loaded Singleton instance and thread safety
-    private static class Holder{
-        static final DBConnection INSTANCE = new DBConnection();
-    }
+    private static DBConnection dbconnection;
 
     private DBConnection(){
         mongoClient = MongoClients.create("mongodb://localhost:27017");
@@ -27,7 +23,7 @@ public class DBConnection {
     }
 
     public static DBConnection getInstance() {
-        return Holder.INSTANCE;
+        return (dbconnection == null) ? dbconnection = new DBConnection() : dbconnection;
     }
 
     public Datastore getDatastore() {
