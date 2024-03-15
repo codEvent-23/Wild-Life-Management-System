@@ -11,6 +11,7 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import entity.Animal;
 import entity.Location;
+import io.github.cdimascio.dotenv.Dotenv;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -216,11 +217,11 @@ public class AnimalFormController implements Initializable {
     }
 
     private List<Location> geocodeLocations() {
-        String apiKey = "AIzaSyBIkRBwLozPBlqhe8xx8rXlUQcpUszeIY0";
+        Dotenv dotenv = Dotenv.configure().load();
         List<Location> locations = new ArrayList<>();
 
         GeoApiContext context = new GeoApiContext.Builder()
-                .apiKey(apiKey)
+                .apiKey(dotenv.get("GOOGLE_MAPS_API_KEY"))
                 .build();
 
         for (String location : selectedLocations) {
