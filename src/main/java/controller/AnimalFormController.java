@@ -5,8 +5,11 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import entity.Animal;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.image.Image;
@@ -18,12 +21,14 @@ import model.AnimalModel;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
-public class AnimalFormController {
+public class AnimalFormController implements Initializable {
     @FXML
     private JFXTextField txtAnimalId;
 
@@ -70,7 +75,7 @@ public class AnimalFormController {
     private JFXTextField txtDietaryPreferences;
 
     @FXML
-    private JFXComboBox<?> cmbLocation;
+    private JFXComboBox<String> cmbLocation;
 
     @FXML
     private JFXTextArea txtAdditionalDetails;
@@ -97,6 +102,8 @@ public class AnimalFormController {
     private JFXTextField txtSearch;
 
     private final List<byte[]> images = new ArrayList<>();
+
+    private final List<String> locations = new ArrayList<>();
 
     private static final Pattern intPattern = Pattern.compile("^[1-9][0-9]?$|^100$");
 
@@ -184,6 +191,16 @@ public class AnimalFormController {
         searchBtnOnAction(event);
     }
 
+    @FXML
+    void addLocationBtnOnAction(ActionEvent event) {
+        String selectedLocation = cmbLocation.getSelectionModel().getSelectedItem();
+        if (!locations.contains(selectedLocation)){
+            locations.add(selectedLocation);
+        }else {
+            System.out.println("Location is already in the list");
+        }
+    }
+
     private void handleImageUpload(ImageView imageView, JFXButton button) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Image");
@@ -217,5 +234,18 @@ public class AnimalFormController {
 
     public void setController(DashboardFormController dashboardFormController) {
         this.dashboardFormController = dashboardFormController;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ObservableList<String> countries = FXCollections.observableArrayList(
+                "United States", "Canada", "Mexico", "Brazil", "Argentina",
+                "United Kingdom", "France", "Germany", "Italy", "Spain",
+                "China", "Japan", "India", "South Korea", "Australia",
+                "Russia", "South Africa", "Egypt", "Nigeria", "Kenya",
+                "Saudi Arabia", "United Arab Emirates", "Turkey", "Iran", "Israel",
+                "Sweden", "Norway", "Denmark", "Netherlands", "Switzerland"
+        );
+        cmbLocation.setItems(countries);
     }
 }

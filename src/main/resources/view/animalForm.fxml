@@ -152,16 +152,20 @@
             <Font name="Poppins Regular" size="17.0" />
          </font>
       </Button>
-      <ImageView fitHeight="38.0" fitWidth="36.0" layoutX="1274.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/addIcon.png" />
-         </image>
-      </ImageView>
       <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="1209.0" layoutY="32.0" onAction="#searchBtnOnAction">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/searchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="1264.0" layoutY="409.0" onAction="#addLocationBtnOnAction">
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/addIcon.png" />
                </image>
             </ImageView>
          </graphic>

@@ -196,6 +196,7 @@ public class DashboardFormController implements Initializable {
     }
 
     public void searchByAnimalForm(String term) {
+        txtSearch.setText(term);
         Animal animal = AnimalModel.searchAnimal(term);
         if (animal != null) {
             showSearchResult(animal);
