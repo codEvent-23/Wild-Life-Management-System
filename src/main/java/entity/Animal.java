@@ -2,6 +2,7 @@ package entity;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
+import dev.morphia.annotations.Reference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,5 +33,8 @@ public class Animal {
     private String dietary_preferences;
     private String additional_details;
     private List<byte[]> images;
+
+    @Reference
+    private List<Location> locations;
 
 }
