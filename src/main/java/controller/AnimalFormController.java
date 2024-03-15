@@ -1,10 +1,16 @@
 package controller;
 
+import com.google.maps.GeoApiContext;
+import com.google.maps.GeocodingApi;
+import com.google.maps.errors.ApiException;
+import com.google.maps.model.GeocodingResult;
+import com.google.maps.model.LatLng;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import entity.Animal;
+import entity.Location;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -103,7 +109,7 @@ public class AnimalFormController implements Initializable {
 
     private final List<byte[]> images = new ArrayList<>();
 
-    private final List<String> locations = new ArrayList<>();
+    private final List<String> selectedLocations = new ArrayList<>();
 
     private static final Pattern intPattern = Pattern.compile("^[1-9][0-9]?$|^100$");
 
@@ -134,6 +140,8 @@ public class AnimalFormController implements Initializable {
             if (intPattern.matcher(txtLifeTime.getText()).matches()) {
                 if (doublePattern.matcher(txtWeight.getText()).matches()) {
                     if (images.size() == 3) {
+
+                        List<Location> locations = geocodeLocations();
                         if (AnimalModel.saveAnimal(new Animal(
                                 txtAnimalId.getText(),
                                 txtSpecies.getText(),
@@ -151,7 +159,8 @@ public class AnimalFormController implements Initializable {
                                 txtBehavior.getText(),
                                 txtDietaryPreferences.getText(),
                                 txtAdditionalDetails.getText(),
-                                images
+                                images,
+                                locations
                         ))) {
 
                             new Alert(Alert.AlertType.CONFIRMATION, "Animal saved sucessfully!").show();
@@ -159,7 +168,7 @@ public class AnimalFormController implements Initializable {
                             stage.close();
 
                         } else {
-                            new Alert(Alert.AlertType.WARNING, "Animal saved unsucessfully!").show();
+                            new Alert(Alert.AlertType.WARNING, "Animal saved unsuccessfully!").show();
                         }
                     } else {
                         new Alert(Alert.AlertType.WARNING, "Please upload 3 images.").show();
@@ -177,11 +186,11 @@ public class AnimalFormController implements Initializable {
 
     @FXML
     void searchBtnOnAction(ActionEvent event) {
-        if (!txtSearch.getText().isEmpty()){
+        if (!txtSearch.getText().isEmpty()) {
             dashboardFormController.searchByAnimalForm(txtSearch.getText());
             Stage stage = (Stage) txtAnimalId.getScene().getWindow();
             stage.hide();
-        }else {
+        } else {
             new Alert(Alert.AlertType.WARNING, "Please enter the name of animal").show();
         }
     }
@@ -194,11 +203,46 @@ public class AnimalFormController implements Initializable {
     @FXML
     void addLocationBtnOnAction(ActionEvent event) {
         String selectedLocation = cmbLocation.getSelectionModel().getSelectedItem();
-        if (!locations.contains(selectedLocation)){
-            locations.add(selectedLocation);
-        }else {
-            System.out.println("Location is already in the list");
+        if (selectedLocation != null) {
+            if (!selectedLocations.contains(selectedLocation)) {
+                selectedLocations.add(selectedLocation);
+                new Alert(Alert.AlertType.CONFIRMATION, selectedLocation + " added to Locations.").show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, selectedLocation + "already added to Locations.").show();
+            }
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Please select a location").show();
         }
+    }
+
+    private List<Location> geocodeLocations() {
+        String apiKey = "AIzaSyBIkRBwLozPBlqhe8xx8rXlUQcpUszeIY0";
+        List<Location> locations = new ArrayList<>();
+
+        GeoApiContext context = new GeoApiContext.Builder()
+                .apiKey(apiKey)
+                .build();
+
+        for (String location : selectedLocations) {
+            try {
+                GeocodingResult[] results = GeocodingApi.geocode(context, location).await();
+
+                if (results.length > 0) {
+                    LatLng latLng = results[0].geometry.location;
+                    double latitude = latLng.lat;
+                    double longitude = latLng.lng;
+
+                    locations.add(new Location(location, latitude, longitude));
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Didn't find the location for " + location).show();
+                }
+            } catch (ApiException | InterruptedException | IOException e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Google Maps API error").show();
+            }
+        }
+        System.out.println(locations);
+        return locations;
     }
 
     private void handleImageUpload(ImageView imageView, JFXButton button) {

@@ -4,6 +4,7 @@ import db.DBConnection;
 import dev.morphia.Datastore;
 import dev.morphia.query.filters.Filters;
 import entity.Animal;
+import entity.Location;
 
 import java.util.regex.Pattern;
 
@@ -12,6 +13,9 @@ public class AnimalModel {
 
     public static boolean saveAnimal(Animal animal) {
         try {
+            for (Location location : animal.getLocations()) {
+                datastore.save(location);
+            }
             datastore.save(animal);
             return true;
         }catch (Exception e){
