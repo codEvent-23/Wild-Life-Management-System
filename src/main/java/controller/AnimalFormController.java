@@ -141,35 +141,39 @@ public class AnimalFormController implements Initializable {
             if (intPattern.matcher(txtLifeTime.getText()).matches()) {
                 if (doublePattern.matcher(txtWeight.getText()).matches()) {
                     if (images.size() == 3) {
+                        if (!selectedLocations.isEmpty()) {
 
-                        List<Location> locations = geocodeLocations();
-                        if (AnimalModel.saveAnimal(new Animal(
-                                txtAnimalId.getText(),
-                                txtSpecies.getText(),
-                                txtCommonName.getText(),
-                                txtScientificName.getText(),
-                                txtGender.getText(),
-                                Integer.parseInt(txtLifeTime.getText()),
-                                Double.parseDouble(txtWeight.getText()),
-                                txtRegion.getText(),
-                                txtConservationStatus.getText(),
-                                txtReproduction.getText(),
-                                txtColor.getText(),
-                                txtMarkings.getText(),
-                                txtHabitat.getText(),
-                                txtBehavior.getText(),
-                                txtDietaryPreferences.getText(),
-                                txtAdditionalDetails.getText(),
-                                images,
-                                locations
-                        ))) {
+                            List<Location> locations = geocodeLocations();
+                            if (AnimalModel.saveAnimal(new Animal(
+                                    txtAnimalId.getText(),
+                                    txtSpecies.getText(),
+                                    txtCommonName.getText(),
+                                    txtScientificName.getText(),
+                                    txtGender.getText(),
+                                    Integer.parseInt(txtLifeTime.getText()),
+                                    Double.parseDouble(txtWeight.getText()),
+                                    txtRegion.getText(),
+                                    txtConservationStatus.getText(),
+                                    txtReproduction.getText(),
+                                    txtColor.getText(),
+                                    txtMarkings.getText(),
+                                    txtHabitat.getText(),
+                                    txtBehavior.getText(),
+                                    txtDietaryPreferences.getText(),
+                                    txtAdditionalDetails.getText(),
+                                    images,
+                                    locations
+                            ))) {
 
-                            new Alert(Alert.AlertType.CONFIRMATION, "Animal saved sucessfully!").show();
-                            Stage stage = (Stage) txtAnimalId.getScene().getWindow();
-                            stage.close();
+                                new Alert(Alert.AlertType.CONFIRMATION, "Animal saved sucessfully!").show();
+                                Stage stage = (Stage) txtAnimalId.getScene().getWindow();
+                                stage.close();
 
-                        } else {
-                            new Alert(Alert.AlertType.WARNING, "Animal saved unsuccessfully!").show();
+                            } else {
+                                new Alert(Alert.AlertType.WARNING, "Animal saved unsuccessfully!").show();
+                            }
+                        }else {
+                            new Alert(Alert.AlertType.WARNING, "Please add locations.").show();
                         }
                     } else {
                         new Alert(Alert.AlertType.WARNING, "Please upload 3 images.").show();

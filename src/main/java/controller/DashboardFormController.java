@@ -2,6 +2,9 @@ package controller;
 
 import com.jfoenix.controls.JFXTextField;
 import entity.Animal;
+import entity.Location;
+import io.github.cdimascio.dotenv.Dotenv;
+import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,11 +22,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import model.AnimalModel;
+import netscape.javascript.JSObject;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -66,6 +71,11 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     private ImageView imageView3;
+
+    @FXML
+    private WebView mapView;
+
+    private WebEngine engine;
 
     // Flag to track whether the animal form is opened or not
     private boolean formOpened = false;
@@ -155,6 +165,7 @@ public class DashboardFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Set the animalDetailsAnchorPane to be initially invisible
         animalDetailsAnchorPane.setVisible(false);
+        engine = mapView.getEngine();
     }
 
     public void setUser() {
@@ -221,27 +232,6 @@ public class DashboardFormController implements Initializable {
         title.setFont(new Font("Poppins", 28));
         title.setStyle("-fx-font-weight: bold;");
 
-//        HBox hBox = new HBox();
-//        hBox.setSpacing(50);
-//        Label scientificName = new Label("Scientific name: " + animal.getScientific_name());
-//        scientificName.setFont(new Font("Poppins", 18));
-//        hBox.getChildren().add(scientificName);
-//        Label gender = new Label("Gender: " + animal.getGender());
-//        gender.setFont(new Font("Poppins", 18));
-//        hBox.getChildren().add(gender);
-//
-//        HBox hBox2 = new HBox();
-//        hBox2.setSpacing(50);
-//        Label weight = new Label("Average weight: " + animal.getAverage_weight());
-//        weight.setFont(new Font("Poppins", 18));
-//        hBox2.getChildren().add(weight);
-//        Label lifeTime = new Label("Average lifetime: " + animal.getAverage_life_time());
-//        lifeTime.setFont(new Font("Poppins", 18));
-//        hBox2.getChildren().add(lifeTime);
-//        Label region = new Label("Region : " + animal.getRegion());
-//        region.setFont(new Font("Poppins", 18));
-//        hBox2.getChildren().add(region);
-
         Label detail = new Label("The "+ animal.getCommon_name() +" is a fascinating creature found in "+ animal.getRegion() +" and various regions around the world." +
                 " Known for its "+ animal.getColor() +" "+ animal.getMarkings() + ", this "+ animal.getGender()+" " +
                 animal.getSpecies() +" exhibits remarkable "+ animal.getBehavior()+". With an average lifespan of " +
@@ -264,5 +254,25 @@ public class DashboardFormController implements Initializable {
                 imgHBox, CommonLocationHBox, mapHBox,
                 title, paragrph
         );
+
+        loadMap(animal.getLocations());
+    }
+
+    private void loadMap(List<Location> locations) {
+
+        StringBuilder jsArray = new StringBuilder("[");
+        for (Location location : locations) {
+            jsArray.append("{lat: ").append(location.getLatitude())
+                    .append(", lng: ").append(location.getLongitude())
+                    .append("},");
+        }
+        jsArray.append("]");
+
+        engine.getLoadWorker().stateProperty().addListener((ob, old, newVal) -> {
+            if (newVal == Worker.State.SUCCEEDED){
+                engine.executeScript("showLocations("+ jsArray.toString() +")");
+            }
+        });
+        engine.load(getClass().getResource("/map.html").toExternalForm());
     }
 }
