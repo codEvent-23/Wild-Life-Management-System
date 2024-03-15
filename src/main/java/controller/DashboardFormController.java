@@ -101,9 +101,16 @@ public class DashboardFormController implements Initializable {
 
         // Update the formOpened flag and set an event handler for when the Animal Form stage is closed
         formOpened = true;
+        btnManageAnimal.setDisable(true);
+
         stage.setOnCloseRequest(e -> {
             formOpened = false;
             // Re-enable the "Manage Animal" button when the Animal Form stage is closed
+            btnManageAnimal.setDisable(false);
+        });
+        stage.setOnHiding(e -> {
+            formOpened = false;
+            // Re-enable the "Manage Animal" button when the Animal Form stage is hide
             btnManageAnimal.setDisable(false);
         });
     }
@@ -213,42 +220,48 @@ public class DashboardFormController implements Initializable {
         title.setFont(new Font("Poppins", 28));
         title.setStyle("-fx-font-weight: bold;");
 
-        HBox hBox = new HBox();
-        hBox.setSpacing(50);
-        Label scientificName = new Label("Scientific name: " + animal.getScientific_name());
-        scientificName.setFont(new Font("Poppins", 18));
-        hBox.getChildren().add(scientificName);
-        Label gender = new Label("Gender: " + animal.getGender());
-        gender.setFont(new Font("Poppins", 18));
-        hBox.getChildren().add(gender);
+//        HBox hBox = new HBox();
+//        hBox.setSpacing(50);
+//        Label scientificName = new Label("Scientific name: " + animal.getScientific_name());
+//        scientificName.setFont(new Font("Poppins", 18));
+//        hBox.getChildren().add(scientificName);
+//        Label gender = new Label("Gender: " + animal.getGender());
+//        gender.setFont(new Font("Poppins", 18));
+//        hBox.getChildren().add(gender);
+//
+//        HBox hBox2 = new HBox();
+//        hBox2.setSpacing(50);
+//        Label weight = new Label("Average weight: " + animal.getAverage_weight());
+//        weight.setFont(new Font("Poppins", 18));
+//        hBox2.getChildren().add(weight);
+//        Label lifeTime = new Label("Average lifetime: " + animal.getAverage_life_time());
+//        lifeTime.setFont(new Font("Poppins", 18));
+//        hBox2.getChildren().add(lifeTime);
+//        Label region = new Label("Region : " + animal.getRegion());
+//        region.setFont(new Font("Poppins", 18));
+//        hBox2.getChildren().add(region);
 
-        HBox hBox2 = new HBox();
-        hBox2.setSpacing(50);
-        Label weight = new Label("Average weight: " + animal.getAverage_weight());
-        weight.setFont(new Font("Poppins", 18));
-        hBox2.getChildren().add(weight);
-        Label lifeTime = new Label("Average lifetime: " + animal.getAverage_life_time());
-        lifeTime.setFont(new Font("Poppins", 18));
-        hBox2.getChildren().add(lifeTime);
-        Label region = new Label("Region : " + animal.getRegion());
-        region.setFont(new Font("Poppins", 18));
-        hBox2.getChildren().add(region);
-
-        Label detail = new Label(animal.getAdditional_details());
+        Label detail = new Label("The "+ animal.getCommon_name() +" is a fascinating creature found in "+ animal.getRegion() +" and various regions around the world." +
+                " Known for its "+ animal.getColor() +" "+ animal.getMarkings() + ", this "+ animal.getGender()+" " +
+                animal.getSpecies() +" exhibits remarkable "+ animal.getBehavior()+". With an average lifespan of " +
+                animal.getAverage_life_time() +" years and an average weight of "+ animal.getAverage_weight() +"kg, " +
+                "these "+ animal.getConservation_status() +" animals play a crucial role in their ecosystems. Their " +
+                "preferred habitat includes "+ animal.getHabitat() +" and main dietary preferences is "+ animal.getDietary_preferences() +
+                ". "+ animal.getReproduction() +" contribute to the perpetuation of their species. "+ animal.getAdditional_details() +".");
         detail.setWrapText(true);
         detail.setTextAlignment(TextAlignment.JUSTIFY);
-        detail.setFont(new Font("Calibri", 14));
+        detail.setFont(new Font("Calibri", 16));
         VBox.setMargin(detail, new Insets(10, 0, 0, 0));
         VBox detailWrapper = new VBox();
         detailWrapper.getChildren().add(detail);
 
-        HBox hBox3 = new HBox();
+        HBox paragrph = new HBox();
         mainVBox.setPadding(new Insets(20, 30, 20, 20));
-        hBox3.getChildren().add(detailWrapper);
+        paragrph.getChildren().add(detailWrapper);
 
         mainVBox.getChildren().addAll(
                 imgHBox, CommonLocationHBox, mapHBox,
-                title, hBox, hBox2, hBox3
+                title, paragrph
         );
     }
 }

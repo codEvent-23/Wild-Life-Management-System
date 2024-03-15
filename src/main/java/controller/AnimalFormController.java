@@ -173,7 +173,7 @@ public class AnimalFormController {
         if (!txtSearch.getText().isEmpty()){
             dashboardFormController.searchByAnimalForm(txtSearch.getText());
             Stage stage = (Stage) txtAnimalId.getScene().getWindow();
-            stage.close();
+            stage.hide();
         }else {
             new Alert(Alert.AlertType.WARNING, "Please enter the name of animal").show();
         }
