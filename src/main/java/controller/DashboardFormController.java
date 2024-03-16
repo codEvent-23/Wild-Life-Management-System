@@ -3,7 +3,6 @@ package controller;
 import com.jfoenix.controls.JFXTextField;
 import entity.Animal;
 import entity.Location;
-import io.github.cdimascio.dotenv.Dotenv;
 import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,7 +27,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import model.AnimalModel;
-import netscape.javascript.JSObject;
+import model.AnimalModelImpl;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -76,6 +75,8 @@ public class DashboardFormController implements Initializable {
     private WebView mapView;
 
     private WebEngine engine;
+
+    AnimalModel animalModel = new AnimalModelImpl();
 
     // Flag to track whether the animal form is opened or not
     private boolean formOpened = false;
@@ -190,7 +191,7 @@ public class DashboardFormController implements Initializable {
     @FXML
     void searchBtnOnAction(ActionEvent event) {
         if (!txtSearch.getText().isEmpty()) {
-            Animal animal = AnimalModel.searchAnimal(txtSearch.getText());
+            Animal animal = animalModel.searchAnimal(txtSearch.getText());
             if (animal != null) {
                 showSearchResult(animal);
             } else {
@@ -208,7 +209,7 @@ public class DashboardFormController implements Initializable {
 
     public void searchByAnimalForm(String term) {
         txtSearch.setText(term);
-        Animal animal = AnimalModel.searchAnimal(term);
+        Animal animal = animalModel.searchAnimal(term);
         if (animal != null) {
             showSearchResult(animal);
         } else {

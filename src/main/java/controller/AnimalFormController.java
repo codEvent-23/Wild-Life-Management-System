@@ -27,6 +27,7 @@ import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.AnimalModel;
+import model.AnimalModelImpl;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -126,6 +127,8 @@ public class AnimalFormController implements Initializable {
 
     private DashboardFormController dashboardFormController;
 
+    AnimalModel animalModel = new AnimalModelImpl();
+
     @FXML
     void ImageUpload1OnAction(ActionEvent event) {
         handleImageUpload(image1, imageUploadBtn1);
@@ -151,7 +154,7 @@ public class AnimalFormController implements Initializable {
                     if (images.size() == 3) {
                         if (!locations.isEmpty()) {
 
-                            if (AnimalModel.saveAnimal(new Animal(
+                            if (animalModel.saveAnimal(new Animal(
                                     txtAnimalId.getText(),
                                     txtSpecies.getText(),
                                     txtCommonName.getText(),
