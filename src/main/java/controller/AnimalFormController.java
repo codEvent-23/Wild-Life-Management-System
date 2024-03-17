@@ -334,5 +334,6 @@ public class AnimalFormController implements Initializable {
         );
         cmbLocation.setItems(countries);
         engine = mapView.getEngine();
+        loadMap();
     }
 }
