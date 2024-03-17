@@ -21,7 +21,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -32,10 +35,7 @@ import model.AnimalModelImpl;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 // Controller class for the DashboardForm.fxml
 public class DashboardFormController implements Initializable {
@@ -51,6 +51,43 @@ public class DashboardFormController implements Initializable {
     public HBox imgHBox;
     public VBox mainVBox;
     public ScrollPane mainScrollPane;
+
+    @FXML
+    private ImageView dashboardImage1;
+
+    @FXML
+    private ImageView dashboardImage2;
+
+    @FXML
+    private ImageView dashboardImage3;
+
+    @FXML
+    private ImageView dashboardImage4;
+
+    @FXML
+    private Text dashboardAnimalName1;
+
+    @FXML
+    private Text dashboardAnimalName2;
+
+    @FXML
+    private Text dashboardAnimalName3;
+
+    @FXML
+    private Text dashboardAnimalName4;
+
+    @FXML
+    private Text dashboardAnimalSname1;
+
+    @FXML
+    private Text dashboardAnimalSname2;
+
+    @FXML
+    private Text dashboardAnimalSname3;
+
+    @FXML
+    private Text dashboardAnimalSname4;
+
 
     @FXML
     private JFXTextField txtSearch;
@@ -161,12 +198,66 @@ public class DashboardFormController implements Initializable {
         mainVBox.getChildren().addAll(imgHBox, CommonLocationHBox, mapHBox, tital, hBox);
     }
 
+    @FXML
+    void searchBtnOnAction(ActionEvent event) {
+        if (!txtSearch.getText().isEmpty()) {
+            Animal animal = animalModel.searchAnimal(txtSearch.getText());
+            if (animal != null) {
+                showSearchResult(animal);
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Couldn't find the animal.").show();
+            }
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Please enter the name of animal").show();
+        }
+    }
+
+    @FXML
+    void txtSearchOnAction(ActionEvent event) {
+        searchBtnOnAction(event);
+    }
+
     // Method called during the initialization of the controller
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Set the animalDetailsAnchorPane to be initially invisible
+        setImageViews();
+        setDashboardAnimalDetails();
         animalDetailsAnchorPane.setVisible(false);
         engine = mapView.getEngine();
+    }
+
+    private void setImageViews() {
+        List<ImageView> imageViews = Arrays.asList(dashboardImage1, dashboardImage2, dashboardImage3, dashboardImage4);
+
+        for (ImageView imageView : imageViews) {
+            double size = Math.min(imageView.getFitWidth(), imageView.getFitHeight());
+            double radius = size / 2.0;
+
+            Circle clip = new Circle(radius);
+            clip.setCenterX(radius);
+            clip.setCenterY(radius);
+            imageView.setClip(clip);
+        }
+    }
+
+
+
+    private void setDashboardAnimalDetails() {
+        List<Animal> animals = animalModel.getAnimals();
+
+        if (animals.size() >= 4) {
+            List<ImageView> imageViews = Arrays.asList(dashboardImage1, dashboardImage2, dashboardImage3, dashboardImage4);
+            List<Text> names = Arrays.asList(dashboardAnimalName1, dashboardAnimalName2, dashboardAnimalName3, dashboardAnimalName4);
+            List<Text> sciName = Arrays.asList(dashboardAnimalSname1, dashboardAnimalSname2, dashboardAnimalSname3, dashboardAnimalSname4);
+
+            for (int i = 0; i < animals.size(); i++) {
+                Animal animal = animals.get(i);
+                imageViews.get(i).setImage(new Image(new ByteArrayInputStream(animal.getImages().get(0)), 176, 176, false, true));
+                names.get(i).setText(animal.getCommon_name());
+                sciName.get(i).setText(animal.getScientific_name());
+            }
+        }
     }
 
     public void setUser() {
@@ -186,25 +277,6 @@ public class DashboardFormController implements Initializable {
 
     public void closeOnMouseClicked(MouseEvent mouseEvent) {
         animalDetailsAnchorPane.setVisible(false);
-    }
-
-    @FXML
-    void searchBtnOnAction(ActionEvent event) {
-        if (!txtSearch.getText().isEmpty()) {
-            Animal animal = animalModel.searchAnimal(txtSearch.getText());
-            if (animal != null) {
-                showSearchResult(animal);
-            } else {
-                new Alert(Alert.AlertType.WARNING, "Couldn't find the animal.").show();
-            }
-        } else {
-            new Alert(Alert.AlertType.WARNING, "Please enter the name of animal").show();
-        }
-    }
-
-    @FXML
-    void txtSearchOnAction(ActionEvent event) {
-        searchBtnOnAction(event);
     }
 
     public void searchByAnimalForm(String term) {

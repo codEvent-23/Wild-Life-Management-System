@@ -6,6 +6,7 @@ import dev.morphia.query.filters.Filters;
 import entity.Animal;
 import entity.Location;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class AnimalModelImpl implements AnimalModel{
@@ -39,5 +40,12 @@ public class AnimalModelImpl implements AnimalModel{
                 .filter(Filters.eq("_id", id))
                 .first();
         return animal != null;
+    }
+
+    @Override
+    public List<Animal> getAnimals() {
+        return datastore.find(Animal.class)
+                .iterator().toList()
+                .stream().limit(4).toList();
     }
 }
