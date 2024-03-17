@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface AnimalModel{
 
+
+
+
     boolean saveAnimal(Animal animal);
 
     Animal searchAnimal(String term);
@@ -14,4 +17,7 @@ public interface AnimalModel{
 
     List<Animal> getAnimals();
 
+    Animal searchAnimalByAi(String string);
+
+    Animal searchbyImageOutput(String firstBirdName);
 }

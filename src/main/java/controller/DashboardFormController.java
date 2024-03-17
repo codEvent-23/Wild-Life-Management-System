@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -22,20 +23,27 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.AnimalModel;
 import model.AnimalModelImpl;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
+
+import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
+
+
+
 
 // Controller class for the DashboardForm.fxml
 public class DashboardFormController implements Initializable {
@@ -51,6 +59,7 @@ public class DashboardFormController implements Initializable {
     public HBox imgHBox;
     public VBox mainVBox;
     public ScrollPane mainScrollPane;
+    public ImageView imageuploadview;
 
     @FXML
     private ImageView dashboardImage1;
@@ -143,7 +152,8 @@ public class DashboardFormController implements Initializable {
         // Show the Animal Form stage
         stage.show();
         // Center the Animal Form stage on the screen
-        stage.centerOnScreen();
+//        stage.centerOnScreen();
+        stage.setY(-10);
         // Set the title for the Animal Form stage
         stage.setTitle("Wildlife Management System - Animal Page");
 
@@ -166,36 +176,118 @@ public class DashboardFormController implements Initializable {
     // Method called when the "Upload Image" button is clicked
     @FXML
     void uploadImgBtnOnAction(ActionEvent event) {
-        animalDetailsAnchorPane.setVisible(true);
-        mainVBox.getChildren().clear();
+        FileChooser fileChooser = new FileChooser();
 
-        Label tital = new Label("(Animal Name)");
-        tital.setFont(new Font("Poppins", 20));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            try {
+                Image image = new Image(new FileInputStream(selectedFile));
+                imageuploadview.setImage(image);
+                imageuploadview.setCursor(Cursor.HAND);
+                String absolutePath = selectedFile.getAbsolutePath();
+                imagescanrun(absolutePath);
+//
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
 
-        Label detail = new Label("\n" + "The Wildlife Management System employs JavaFX and MongoDB, leveraging " +
-                "Object-Oriented Programming for seamless information management of diverse wildlife species. With " +
-                "a user-friendly interface, it offers a loading page, a dynamic dashboard for searching and managing " +
-                "animals, detailed information retrieval, and image recognition capabilities.\n\nThe Wildlife Management " +
-                "System employs JavaFX and MongoDB, leveraging Object-Oriented Programming for seamless information " +
-                "management of diverse wildlife species. With a user-friendly interface, it offers a loading page, a " +
-                "dynamic dashboard for searching and managing animals, detailed information retrieval, and image " +
-                "recognition capabilities.\n\nThe Wildlife Management System employs JavaFX and MongoDB, leveraging " +
-                "Object-Oriented Programming for seamless information management of diverse wildlife species. With a " +
-                "user-friendly interface, it offers a loading page, a dynamic dashboard for searching and managing " +
-                "animals, detailed information retrieval, and image recognition capabilities.\n\nThe Wildlife Management " +
-                "System employs JavaFX and MongoDB, leveraging Object-Oriented Programming for seamless information " +
-                "management of diverse wildlife species. With a user-friendly interface, it offers a loading page, " +
-                "a dynamic dashboard for searching and managing animals, detailed information retrieval, and image " +
-                "recognition capabilities.");
-        detail.setWrapText(true);
-        detail.setTextAlignment(TextAlignment.JUSTIFY);
-        detail.setFont(new Font("Calibri", 16));
+    }
 
-        HBox hBox = new HBox();
-        mainVBox.setPadding(new Insets(20, 30, 20, 20));
-        hBox.getChildren().add(detail);
+    private void imagescanrun(String absolutePath) throws IOException {
+        String credentialsToEncode = "acc_1df6e21c9636d8b" + ":" + "359ba138f5867d2d1d3756434378c8da";
+        String basicAuth = Base64.getEncoder().encodeToString(credentialsToEncode.getBytes(StandardCharsets.UTF_8));
 
-        mainVBox.getChildren().addAll(imgHBox, CommonLocationHBox, mapHBox, tital, hBox);
+        File fileToUpload = new File(absolutePath);
+
+        String endpoint = "/tags";
+        String crlf = "\r\n";
+        String twoHyphens = "--";
+        String boundary =  "Image Upload";
+
+        URL urlObject = new URL("https://api.imagga.com/v2" + endpoint);
+        HttpURLConnection connection = (HttpURLConnection) urlObject.openConnection();
+        connection.setRequestProperty("Authorization", "Basic " + basicAuth);
+        connection.setUseCaches(false);
+        connection.setDoOutput(true);
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("Connection", "Keep-Alive");
+        connection.setRequestProperty("Cache-Control", "no-cache");
+        connection.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+
+        DataOutputStream request = new DataOutputStream(connection.getOutputStream());
+        request.writeBytes(twoHyphens + boundary + crlf);
+        request.writeBytes("Content-Disposition: form-data; name=\"image\";filename=\"" + fileToUpload.getName() + "\"" + crlf);
+        request.writeBytes(crlf);
+
+        InputStream inputStream = new FileInputStream(fileToUpload);
+        int bytesRead;
+        byte[] dataBuffer = new byte[1024];
+        while ((bytesRead = inputStream.read(dataBuffer)) != -1) {
+            request.write(dataBuffer, 0, bytesRead);
+        }
+
+        request.writeBytes(crlf);
+        request.writeBytes(twoHyphens + boundary + twoHyphens + crlf);
+        request.flush();
+        request.close();
+
+
+        InputStream responseStream = new BufferedInputStream(connection.getInputStream());
+        BufferedReader responseStreamReader = new BufferedReader(new InputStreamReader(responseStream));
+        String line;
+        StringBuilder stringBuilder = new StringBuilder();
+
+        while ((line = responseStreamReader.readLine()) != null) {
+            stringBuilder.append(line).append("\n");
+        }
+        responseStreamReader.close();
+
+        String response = stringBuilder.toString();
+        responseStream.close();
+        connection.disconnect();
+//        System.out.println(response);
+
+        Set<String> birdNames = extractBirdNames(response);
+        birdNames.remove("bird"); // Remove the generic term "bird" from the array(array eken ain krnw)
+
+        if (!birdNames.isEmpty()) {
+            String firstBirdName = birdNames.iterator().next();
+            searchbyimageOutput(firstBirdName);
+            System.out.println(
+                    "Bird names extracted with confidence 100%: " + birdNames
+            );
+            System.out.println("\uD83D\uDC26\uD83D\uDC26\uD83D\uDC26\uD83D\uDC26");
+        } else {
+            System.out.println("No bird names extracted with confidence 100%.");
+        }
+    }
+
+    private void searchbyimageOutput(String firstBirdName) {
+        Animal animal = animalModel.searchbyImageOutput(firstBirdName);
+        System.out.println(firstBirdName);
+        if (animal!= null) {
+            showSearchResult(animal);
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Couldn't find the animal.").show();
+        }
+
+    }
+
+    private static Set<String> extractBirdNames(String jsonResponse) {
+        Set<String> birdNames = new HashSet<>();
+        JSONObject jsonObject = new JSONObject(jsonResponse);
+        JSONArray tagsArray = jsonObject.getJSONObject("result").getJSONArray("tags");
+
+        for (int i = 0; i < tagsArray.length(); i++) {
+            JSONObject tagObject = tagsArray.getJSONObject(i);
+            double confidence = tagObject.getDouble("confidence");
+            if (confidence == 100) {
+                String tagName = tagObject.getJSONObject("tag").getString("en").toLowerCase();
+                birdNames.add(tagName);
+            }
+        }
+        return birdNames;
     }
 
     @FXML

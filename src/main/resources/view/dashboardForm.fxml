@@ -61,7 +61,7 @@
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <ImageView fitHeight="247.0" fitWidth="630.0" layoutX="70.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageuploadview" fitHeight="247.0" fitWidth="630.0" layoutX="70.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/updateLocationImg.png" />
          </image>

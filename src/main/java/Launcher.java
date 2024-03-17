@@ -5,5 +5,6 @@ public class Launcher {
     public static void main(String[] args) {
         // Call the main method of the AppInitializer class to start the JavaFX application
         AppInitializer.main(args);
+
     }
 }
