@@ -1,0 +1,8 @@
+.idea
+mvnw.cmd
+mvnw
+/target
+out
+target
+animalsSeaching.iml
+.env
