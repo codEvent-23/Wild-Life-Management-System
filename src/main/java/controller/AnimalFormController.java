@@ -40,8 +40,6 @@ import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
 public class AnimalFormController implements Initializable {
-    @FXML
-    private JFXTextField txtAnimalId;
 
     @FXML
     private JFXTextField txtSpecies;
@@ -146,45 +144,41 @@ public class AnimalFormController implements Initializable {
 
     @FXML
     void saveBtnOnAction(ActionEvent event) {
-        if (validateFields(txtAnimalId, txtSpecies, txtCommonName, txtScientificName, txtGender,
+        if (validateFields(txtSpecies, txtCommonName, txtScientificName, txtGender,
                 txtLifeTime, txtWeight, txtRegion, txtConservationStatus, txtReproduction, txtColor,
                 txtMarkings, txtHabitat, txtBehavior, txtDietaryPreferences, txtAdditionalDetails)) {
             if (intPattern.matcher(txtLifeTime.getText()).matches()) {
                 if (doublePattern.matcher(txtWeight.getText()).matches()) {
                     if (images.size() == 3) {
                         if (!locations.isEmpty()) {
-                            if (!animalModel.existAnimal(txtAnimalId.getText())) {
 
-                                if (animalModel.saveAnimal(new Animal(
-                                        txtAnimalId.getText(),
-                                        txtSpecies.getText(),
-                                        txtCommonName.getText(),
-                                        txtScientificName.getText(),
-                                        txtGender.getText(),
-                                        Integer.parseInt(txtLifeTime.getText()),
-                                        Double.parseDouble(txtWeight.getText()),
-                                        txtRegion.getText(),
-                                        txtConservationStatus.getText(),
-                                        txtReproduction.getText(),
-                                        txtColor.getText(),
-                                        txtMarkings.getText(),
-                                        txtHabitat.getText(),
-                                        txtBehavior.getText(),
-                                        txtDietaryPreferences.getText(),
-                                        txtAdditionalDetails.getText(),
-                                        images,
-                                        locations
-                                ))) {
+                            Animal animal = new Animal();
+                            animal.setSpecies(txtSpecies.getText());
+                            animal.setCommon_name(txtCommonName.getText());
+                            animal.setScientific_name(txtScientificName.getText());
+                            animal.setGender(txtGender.getText());
+                            animal.setAverage_life_time(Integer.parseInt(txtLifeTime.getText()));
+                            animal.setAverage_weight(Double.parseDouble(txtWeight.getText()));
+                            animal.setRegion(txtRegion.getText());
+                            animal.setConservation_status(txtConservationStatus.getText());
+                            animal.setReproduction(txtReproduction.getText());
+                            animal.setColor(txtColor.getText());
+                            animal.setMarkings(txtMarkings.getText());
+                            animal.setHabitat(txtHabitat.getText());
+                            animal.setBehavior(txtBehavior.getText());
+                            animal.setDietary_preferences(txtDietaryPreferences.getText());
+                            animal.setAdditional_details(txtAdditionalDetails.getText());
+                            animal.setImages(images);
+                            animal.setLocations(locations);
 
-                                    new Alert(Alert.AlertType.CONFIRMATION, "Animal saved sucessfully!").show();
-                                    Stage stage = (Stage) txtAnimalId.getScene().getWindow();
-                                    stage.close();
+                            if (animalModel.saveAnimal(animal)) {
 
-                                } else {
-                                    new Alert(Alert.AlertType.WARNING, "Animal saved unsuccessfully!").show();
-                                }
-                            }else {
-                                new Alert(Alert.AlertType.WARNING, "Animal id already exists.").show();
+                                new Alert(Alert.AlertType.CONFIRMATION, "Animal saved successfully!").show();
+                                Stage stage = (Stage) txtCommonName.getScene().getWindow();
+                                stage.close();
+
+                            } else {
+                                new Alert(Alert.AlertType.WARNING, "Animal saved unsuccessfully!").show();
                             }
                         } else {
                             new Alert(Alert.AlertType.WARNING, "Please add locations.").show();
@@ -207,7 +201,7 @@ public class AnimalFormController implements Initializable {
     void searchBtnOnAction(ActionEvent event) {
         if (!txtSearch.getText().isEmpty()) {
             dashboardFormController.searchByAnimalForm(txtSearch.getText());
-            Stage stage = (Stage) txtAnimalId.getScene().getWindow();
+            Stage stage = (Stage) txtCommonName.getScene().getWindow();
             stage.hide();
         } else {
             new Alert(Alert.AlertType.WARNING, "Please enter the name of animal").show();
@@ -276,7 +270,7 @@ public class AnimalFormController implements Initializable {
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.jpeg", "*.png")
         );
-        File selectedFile = fileChooser.showOpenDialog(txtAnimalId.getScene().getWindow());
+        File selectedFile = fileChooser.showOpenDialog(txtCommonName.getScene().getWindow());
 
         if (selectedFile != null) {
             try {

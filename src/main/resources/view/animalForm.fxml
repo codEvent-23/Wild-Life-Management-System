@@ -20,17 +20,12 @@
             <Font name="SansSerif Regular" size="51.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="txtAnimalId" focusColor="#353a52" labelFloat="true" layoutX="104.0" layoutY="123.0" prefHeight="44.0" prefWidth="202.0" promptText=" Animal ID" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField fx:id="txtSpecies" focusColor="#353a52" labelFloat="true" layoutX="614.0" layoutY="123.0" prefHeight="44.0" prefWidth="202.0" promptText=" Species" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtSpecies" focusColor="#353a52" labelFloat="true" layoutX="364.0" layoutY="123.0" prefHeight="44.0" prefWidth="202.0" promptText=" Species" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
-         <font>
-            <Font name="Poppins Regular" size="19.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="txtCommonName" focusColor="#353a52" labelFloat="true" layoutX="614.0" layoutY="123.0" prefHeight="44.0" prefWidth="202.0" promptText=" Common Name" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
+      <JFXTextField fx:id="txtCommonName" focusColor="#353a52" labelFloat="true" layoutX="104.0" layoutY="123.0" prefHeight="44.0" prefWidth="465.0" promptText=" Common Name" styleClass="textFieldInAnimalManageForm" stylesheets="@../style/ComponentStyleSheet.css" unFocusColor="#4d4d4d00">
          <font>
             <Font name="Poppins Regular" size="19.0" />
          </font>
