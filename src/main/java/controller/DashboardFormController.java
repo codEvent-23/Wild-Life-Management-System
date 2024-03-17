@@ -259,7 +259,8 @@ public class DashboardFormController implements Initializable {
             );
             System.out.println("\uD83D\uDC26\uD83D\uDC26\uD83D\uDC26\uD83D\uDC26");
         } else {
-            System.out.println("No bird names extracted with confidence 100%.");
+            new Alert(Alert.AlertType.WARNING,"No bird found in the image").show();
+            imageuploadview.setImage(new Image("image/updateLocationImg.png"));
         }
     }
 
@@ -269,7 +270,8 @@ public class DashboardFormController implements Initializable {
         if (animal!= null) {
             showSearchResult(animal);
         } else {
-            new Alert(Alert.AlertType.WARNING, "Couldn't find the animal.").show();
+            new Alert(Alert.AlertType.WARNING, "Couldn't find '"+ firstBirdName + "'.").show();
+            imageuploadview.setImage(new Image("image/updateLocationImg.png"));
         }
 
     }
@@ -367,6 +369,8 @@ public class DashboardFormController implements Initializable {
 
     public void closeOnMouseClicked(MouseEvent mouseEvent) {
         animalDetailsAnchorPane.setVisible(false);
+        txtSearch.clear();
+        imageuploadview.setImage(new Image("image/updateLocationImg.png"));
     }
 
     public void searchByAnimalForm(String term) {
