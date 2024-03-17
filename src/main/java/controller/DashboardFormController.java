@@ -241,8 +241,6 @@ public class DashboardFormController implements Initializable {
         }
     }
 
-
-
     private void setDashboardAnimalDetails() {
         List<Animal> animals = animalModel.getAnimals();
 
@@ -293,8 +291,7 @@ public class DashboardFormController implements Initializable {
         animalDetailsAnchorPane.setVisible(true);
         mainVBox.getChildren().clear();
 
-        List<ImageView> imageViews = new ArrayList<>();
-        Collections.addAll(imageViews, imageView1, imageView2, imageView3);
+        List<ImageView> imageViews = Arrays.asList(imageView1, imageView2, imageView3);
 
         for (int i = 0; i < animal.getImages().size(); i++) {
             byte[] imageData = animal.getImages().get(i);
