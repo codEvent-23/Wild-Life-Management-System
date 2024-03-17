@@ -153,34 +153,38 @@ public class AnimalFormController implements Initializable {
                 if (doublePattern.matcher(txtWeight.getText()).matches()) {
                     if (images.size() == 3) {
                         if (!locations.isEmpty()) {
+                            if (!animalModel.existAnimal(txtAnimalId.getText())) {
 
-                            if (animalModel.saveAnimal(new Animal(
-                                    txtAnimalId.getText(),
-                                    txtSpecies.getText(),
-                                    txtCommonName.getText(),
-                                    txtScientificName.getText(),
-                                    txtGender.getText(),
-                                    Integer.parseInt(txtLifeTime.getText()),
-                                    Double.parseDouble(txtWeight.getText()),
-                                    txtRegion.getText(),
-                                    txtConservationStatus.getText(),
-                                    txtReproduction.getText(),
-                                    txtColor.getText(),
-                                    txtMarkings.getText(),
-                                    txtHabitat.getText(),
-                                    txtBehavior.getText(),
-                                    txtDietaryPreferences.getText(),
-                                    txtAdditionalDetails.getText(),
-                                    images,
-                                    locations
-                            ))) {
+                                if (animalModel.saveAnimal(new Animal(
+                                        txtAnimalId.getText(),
+                                        txtSpecies.getText(),
+                                        txtCommonName.getText(),
+                                        txtScientificName.getText(),
+                                        txtGender.getText(),
+                                        Integer.parseInt(txtLifeTime.getText()),
+                                        Double.parseDouble(txtWeight.getText()),
+                                        txtRegion.getText(),
+                                        txtConservationStatus.getText(),
+                                        txtReproduction.getText(),
+                                        txtColor.getText(),
+                                        txtMarkings.getText(),
+                                        txtHabitat.getText(),
+                                        txtBehavior.getText(),
+                                        txtDietaryPreferences.getText(),
+                                        txtAdditionalDetails.getText(),
+                                        images,
+                                        locations
+                                ))) {
 
-                                new Alert(Alert.AlertType.CONFIRMATION, "Animal saved sucessfully!").show();
-                                Stage stage = (Stage) txtAnimalId.getScene().getWindow();
-                                stage.close();
+                                    new Alert(Alert.AlertType.CONFIRMATION, "Animal saved sucessfully!").show();
+                                    Stage stage = (Stage) txtAnimalId.getScene().getWindow();
+                                    stage.close();
 
-                            } else {
-                                new Alert(Alert.AlertType.WARNING, "Animal saved unsuccessfully!").show();
+                                } else {
+                                    new Alert(Alert.AlertType.WARNING, "Animal saved unsuccessfully!").show();
+                                }
+                            }else {
+                                new Alert(Alert.AlertType.WARNING, "Animal id already exists.").show();
                             }
                         } else {
                             new Alert(Alert.AlertType.WARNING, "Please add locations.").show();
@@ -192,7 +196,7 @@ public class AnimalFormController implements Initializable {
                     new Alert(Alert.AlertType.WARNING, "Average Weight should be a number.").show();
                 }
             } else {
-                new Alert(Alert.AlertType.WARNING, "Average Lifetime should be a integer.").show();
+                new Alert(Alert.AlertType.WARNING, "Average Lifetime should be less than 100.").show();
             }
         } else {
             new Alert(Alert.AlertType.WARNING, "Please fill in all fields.").show();

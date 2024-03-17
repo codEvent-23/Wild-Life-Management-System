@@ -8,4 +8,6 @@ public interface AnimalModel{
 
     Animal searchAnimal(String term);
 
+    boolean existAnimal(String id);
+
 }

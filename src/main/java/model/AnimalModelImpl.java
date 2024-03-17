@@ -32,4 +32,12 @@ public class AnimalModelImpl implements AnimalModel{
                 .filter(Filters.regex("common_name", pattern))
                 .first();
     }
+
+    @Override
+    public boolean existAnimal(String id) {
+        Animal animal = datastore.find(Animal.class)
+                .filter(Filters.eq("_id", id))
+                .first();
+        return animal != null;
+    }
 }
