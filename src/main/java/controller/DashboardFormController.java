@@ -271,7 +271,7 @@ public class DashboardFormController implements Initializable {
     }
 
     private void searchbyimageOutput(String firstBirdName) {
-        Animal animal = animalModel.searchbyImageOutput(firstBirdName);
+        Animal animal = animalModel.searchAnimal(firstBirdName);
         System.out.println(firstBirdName);
         if (animal!= null) {
             showSearchResult(animal);
@@ -377,6 +377,8 @@ public class DashboardFormController implements Initializable {
         animalDetailsAnchorPane.setVisible(false);
         txtSearch.clear();
         imageuploadview.setImage(new Image("image/updateLocationImg.png"));
+        btnManageAnimal.setText("Add Animal");
+        searchedAnimal = null;
     }
 
     public void searchByAnimalForm(String term) {

@@ -10,13 +10,7 @@ public interface AnimalModel{
 
     Animal searchAnimal(String term);
 
-    boolean existAnimal(String id);
-
     List<Animal> getAnimals();
-
-    Animal searchAnimalByAi(String string);
-
-    Animal searchbyImageOutput(String firstBirdName);
 
     boolean updateAnimal(Animal animal);
 }
