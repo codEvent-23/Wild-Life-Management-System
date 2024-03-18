@@ -143,7 +143,7 @@
             <Font name="Poppins Regular" size="12.0" />
          </font>
       </JFXButton>
-      <Button layoutX="1201.0" layoutY="699.0" mnemonicParsing="false" onAction="#saveBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="saveButtonInManageAnimalForm" stylesheets="@../style/ComponentStyleSheet.css" text="Save" textFill="WHITE">
+      <Button fx:id="saveBtn" layoutX="1201.0" layoutY="699.0" mnemonicParsing="false" onAction="#saveBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="saveButtonInManageAnimalForm" stylesheets="@../style/ComponentStyleSheet.css" text="Save" textFill="WHITE">
          <font>
             <Font name="Poppins Regular" size="17.0" />
          </font>

@@ -64,5 +64,32 @@ public class AnimalModelImpl implements AnimalModel{
                 .first();
     }
 
+    @Override
+    public boolean updateAnimal(Animal animal) {
+        try {
+            Animal existingAnimal = datastore.find(Animal.class)
+                    .filter(Filters.eq("common_name", animal.getCommon_name()))
+                    .first();
+
+            if (existingAnimal != null) {
+                for (Location location : animal.getLocations()){
+                    if (!existingAnimal.getLocations().contains(location)){
+                        datastore.save(location);
+                    }
+                }
+
+                animal.setId(existingAnimal.getId());
+                datastore.save(animal);
+
+                return true;
+            } else {
+                return false;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
 }

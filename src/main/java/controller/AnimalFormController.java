@@ -19,6 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -35,6 +36,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
@@ -111,11 +113,14 @@ public class AnimalFormController implements Initializable {
     private JFXTextField txtSearch;
 
     @FXML
+    private Button saveBtn;
+
+    @FXML
     private WebView mapView;
 
     private WebEngine engine;
 
-    private final List<byte[]> images = new ArrayList<>();
+    private List<byte[]> images = new ArrayList<>();
 
     List<Location> locations = new ArrayList<>();
 
@@ -127,19 +132,21 @@ public class AnimalFormController implements Initializable {
 
     AnimalModel animalModel = new AnimalModelImpl();
 
+    private Animal searchedAnimal;
+
     @FXML
-    void ImageUpload1OnAction(ActionEvent event) {
-        handleImageUpload(image1, imageUploadBtn1);
+    void ImageUpload1OnAction(ActionEvent event) throws IOException {
+        handleImageUpload(image1, imageUploadBtn1, 0);
     }
 
     @FXML
-    void ImageUpload2OnAction(ActionEvent event) {
-        handleImageUpload(image2, imageUploadBtn2);
+    void ImageUpload2OnAction(ActionEvent event) throws IOException {
+        handleImageUpload(image2, imageUploadBtn2, 1);
     }
 
     @FXML
-    void ImageUpload3OnAction(ActionEvent event) {
-        handleImageUpload(image3, imageUploadBtn3);
+    void ImageUpload3OnAction(ActionEvent event) throws IOException {
+        handleImageUpload(image3, imageUploadBtn3, 2);
     }
 
     @FXML
@@ -171,14 +178,27 @@ public class AnimalFormController implements Initializable {
                             animal.setImages(images);
                             animal.setLocations(locations);
 
-                            if (animalModel.saveAnimal(animal)) {
+                            if (searchedAnimal == null) {
+                                if (animalModel.saveAnimal(animal)) {
 
-                                new Alert(Alert.AlertType.CONFIRMATION, "Animal saved successfully!").show();
-                                Stage stage = (Stage) txtCommonName.getScene().getWindow();
-                                stage.close();
+                                    new Alert(Alert.AlertType.CONFIRMATION, "Animal saved successfully!").show();
+                                    Stage stage = (Stage) txtCommonName.getScene().getWindow();
+                                    stage.close();
 
-                            } else {
-                                new Alert(Alert.AlertType.WARNING, "Animal saved unsuccessfully!").show();
+                                } else {
+                                    new Alert(Alert.AlertType.WARNING, "Animal saved unsuccessfully!").show();
+                                }
+                            }else {
+                                if (animalModel.updateAnimal(animal)) {
+
+                                    new Alert(Alert.AlertType.CONFIRMATION, "Animal updated successfully!").show();
+                                    dashboardFormController.searchByAnimalForm(animal.getCommon_name());
+                                    Stage stage = (Stage) txtCommonName.getScene().getWindow();
+                                    stage.close();
+
+                                } else {
+                                    new Alert(Alert.AlertType.WARNING, "Animal update unsuccessfully!").show();
+                                }
                             }
                         } else {
                             new Alert(Alert.AlertType.WARNING, "Please add locations.").show();
@@ -264,7 +284,7 @@ public class AnimalFormController implements Initializable {
         return null;
     }
 
-    private void handleImageUpload(ImageView imageView, JFXButton button) {
+    private void handleImageUpload(ImageView imageView, JFXButton button, int index) throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Image");
         fileChooser.getExtensionFilters().addAll(
@@ -273,14 +293,16 @@ public class AnimalFormController implements Initializable {
         File selectedFile = fileChooser.showOpenDialog(txtCommonName.getScene().getWindow());
 
         if (selectedFile != null) {
-            try {
-                byte[] data = Files.readAllBytes(selectedFile.toPath());
-                imageView.setImage(new Image(new ByteArrayInputStream(data)));
-                button.setVisible(false);
+            byte[] data = Files.readAllBytes(selectedFile.toPath());
+            imageView.setImage(new Image(new ByteArrayInputStream(data)));
+            button.setVisible(false);
 
+            if (searchedAnimal == null) {
                 images.add(data);
-            } catch (IOException e) {
-                e.printStackTrace();
+            }else {
+                if (index >= 0 && index < images.size()) {
+                    images.set(index, data);
+                }
             }
         }
 
@@ -329,5 +351,40 @@ public class AnimalFormController implements Initializable {
         cmbLocation.setItems(countries);
         engine = mapView.getEngine();
         loadMap();
+    }
+
+    public void setSearchedAnimal(Animal searchedAnimal){
+        this.searchedAnimal = searchedAnimal;
+    }
+
+    public void setAnimalDetails() {
+        txtSpecies.setText(searchedAnimal.getSpecies());
+        txtCommonName.setText(searchedAnimal.getCommon_name());
+        txtScientificName.setText(searchedAnimal.getScientific_name());
+        txtGender.setText(searchedAnimal.getGender());
+        txtLifeTime.setText(String.valueOf(searchedAnimal.getAverage_life_time()));
+        txtWeight.setText(String.valueOf(searchedAnimal.getAverage_weight()));
+        txtRegion.setText(searchedAnimal.getRegion());
+        txtConservationStatus.setText(searchedAnimal.getConservation_status());
+        txtReproduction.setText(searchedAnimal.getReproduction());
+        txtColor.setText(searchedAnimal.getColor());
+        txtMarkings.setText(searchedAnimal.getMarkings());
+        txtHabitat.setText(searchedAnimal.getHabitat());
+        txtBehavior.setText(searchedAnimal.getBehavior());
+        txtDietaryPreferences.setText(searchedAnimal.getDietary_preferences());
+        txtAdditionalDetails.setText(searchedAnimal.getAdditional_details());
+        images = searchedAnimal.getImages();
+        locations = searchedAnimal.getLocations();
+
+        List<ImageView> imageViews = Arrays.asList(image1, image2, image3);
+
+        for (int i = 0; i < images.size(); i++) {
+            byte[] imageData = images.get(i);
+            imageViews.get(i).setImage(new Image(new ByteArrayInputStream(imageData)));
+        }
+
+        loadMap();
+        txtCommonName.setEditable(false);
+        saveBtn.setText("Update");
     }
 }

@@ -124,6 +124,8 @@ public class DashboardFormController implements Initializable {
 
     AnimalModel animalModel = new AnimalModelImpl();
 
+    private Animal searchedAnimal;
+
     // Flag to track whether the animal form is opened or not
     private boolean formOpened = false;
 
@@ -144,6 +146,10 @@ public class DashboardFormController implements Initializable {
         AnchorPane anchorPane = loader.load();
         AnimalFormController animalFormController = loader.getController();
         animalFormController.setController(this);
+        if (searchedAnimal != null){
+            animalFormController.setSearchedAnimal(searchedAnimal);
+            animalFormController.setAnimalDetails();
+        }
 
         // Create a new stage for the Animal Form
         Stage stage = new Stage();
@@ -386,6 +392,8 @@ public class DashboardFormController implements Initializable {
     private void showSearchResult(Animal animal) {
         animalDetailsAnchorPane.setVisible(true);
         mainVBox.getChildren().clear();
+        btnManageAnimal.setText("Update Animal");
+        searchedAnimal = animal;
 
         List<ImageView> imageViews = Arrays.asList(imageView1, imageView2, imageView3);
 
