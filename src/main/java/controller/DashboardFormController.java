@@ -1,5 +1,6 @@
 package controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import entity.Animal;
 import entity.Location;
@@ -118,6 +119,12 @@ public class DashboardFormController implements Initializable {
     private ImageView imageView3;
 
     @FXML
+    private JFXButton uploadImgBtn;
+
+    @FXML
+    private JFXButton uploadImgBtn1;
+
+    @FXML
     private WebView mapView;
 
     private WebEngine engine;
@@ -163,6 +170,10 @@ public class DashboardFormController implements Initializable {
         // Set the title for the Animal Form stage
         stage.setTitle("Wildlife Management System - Animal Page");
 
+        // Set the application icon for the dashboard stage
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/icon.png")));
+        stage.getIcons().add(image);
+
         // Update the formOpened flag and set an event handler for when the Animal Form stage is closed
         formOpened = true;
         btnManageAnimal.setDisable(true);
@@ -192,6 +203,8 @@ public class DashboardFormController implements Initializable {
                 imageuploadview.setCursor(Cursor.HAND);
                 String absolutePath = selectedFile.getAbsolutePath();
                 imagescanrun(absolutePath);
+                uploadImgBtn1.setVisible(true);
+                uploadImgBtn.setVisible(false);
 //
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -256,7 +269,9 @@ public class DashboardFormController implements Initializable {
 
         Set<String> birdNames = extractBirdNames(response);
         birdNames.remove("bird"); // Remove the generic term "bird" from the array(array eken ain krnw)
-
+        /*birdNames.remove("feline");
+        birdNames.remove("predator");
+        birdNames.remove("big cat");*/
         if (!birdNames.isEmpty()) {
             String firstBirdName = birdNames.iterator().next();
             searchbyimageOutput(firstBirdName);
@@ -325,6 +340,8 @@ public class DashboardFormController implements Initializable {
         setDashboardAnimalDetails();
         animalDetailsAnchorPane.setVisible(false);
         engine = mapView.getEngine();
+        uploadImgBtn.setVisible(true);
+        uploadImgBtn1.setVisible(false);
     }
 
     private void setImageViews() {
@@ -369,6 +386,9 @@ public class DashboardFormController implements Initializable {
         stage.setScene(new Scene(loginForm));
         stage.centerOnScreen();
         stage.show();
+        // Set the application icon for the dashboard stage
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/icon.png")));
+        stage.getIcons().add(image);
         stage.setTitle("Wildlife Management System - Login Page");
         dashboardForm.getScene().getWindow().hide();
     }
@@ -379,6 +399,8 @@ public class DashboardFormController implements Initializable {
         imageuploadview.setImage(new Image("image/updateLocationImg.png"));
         btnManageAnimal.setText("Add Animal");
         searchedAnimal = null;
+        uploadImgBtn1.setVisible(false);
+        uploadImgBtn.setVisible(true);
     }
 
     public void searchByAnimalForm(String term) {

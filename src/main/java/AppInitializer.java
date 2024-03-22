@@ -35,9 +35,9 @@ public class AppInitializer extends Application {
         // Set the stage style to be transparent (no decorations)
         stage.initStyle(StageStyle.TRANSPARENT);
 
-//        // Set the application icon
-//        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/icon.png")));
-//        stage.getIcons().add(image);
+        // Set the application icon
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/icon.png")));
+        stage.getIcons().add(image);
 
         // Set the title of the stage
         stage.setTitle("Wildlife Management System - Loading Page");

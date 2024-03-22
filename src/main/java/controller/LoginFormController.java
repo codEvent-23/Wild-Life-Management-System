@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -20,13 +21,18 @@ public class LoginFormController {
     public Button btnUser;
 
     public void btnAdminOnAction(ActionEvent actionEvent) throws IOException {
-        Parent loginParent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/dashboardForm.fxml")));
+        Parent loginParent = FXMLLoader.load(getClass().getResource("/view/dashboardForm.fxml"));
         Scene loginScene = new Scene(loginParent);
         Stage window = (Stage) btnAdmin.getScene().getWindow();
-        window.setScene(loginScene);
-        window.centerOnScreen();
-        window.setTitle("Wildlife Management System - Admin Dashboard Page");
-        window.show();
+        window.close();
+        Stage window1 = new Stage();
+        window1.setScene(loginScene);
+        window1.centerOnScreen();
+        // Set the application icon for the dashboard stage
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/icon.png")));
+        window1.getIcons().add(image);
+        window1.setTitle("Wildlife Management System - Admin Dashboard Page");
+        window1.show();
     }
 
     public void btnUserOnAction(ActionEvent actionEvent) throws IOException {
@@ -38,9 +44,14 @@ public class LoginFormController {
         controller.setUser();
 
         Stage window = (Stage) btnUser.getScene().getWindow();
-        window.setScene(scene);
-        window.centerOnScreen();
-        window.setTitle("Wildlife Management System - User Dashboard Page");
-        window.show();
+        window.close();
+        Stage window1 = new Stage();
+        window1.setScene(scene);
+        window1.centerOnScreen();
+        // Set the application icon for the dashboard stage
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/icon.png")));
+        window1.getIcons().add(image);
+        window1.setTitle("Wildlife Management System - User Dashboard Page");
+        window1.show();
     }
 }

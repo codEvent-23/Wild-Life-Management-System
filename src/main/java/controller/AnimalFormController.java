@@ -18,8 +18,10 @@ import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -111,6 +113,53 @@ public class AnimalFormController implements Initializable {
 
     @FXML
     private JFXTextField txtSearch;
+
+    @FXML
+    private Label lblCommonName;
+
+    @FXML
+    private Label lblSpecies;
+
+    @FXML
+    private Label lblScientificName;
+
+    @FXML
+    private Label lblGender;
+
+    @FXML
+    private Label lblReproduction;
+
+    @FXML
+    private Label lblConservationStatus;
+
+    @FXML
+    private Label lblRegion;
+
+    @FXML
+    private Label lblAverageWeight;
+
+    @FXML
+    private Label lblAverageLifeTime;
+
+    @FXML
+    private Label lblColor;
+
+    @FXML
+    private Label lblMarkings;
+
+    @FXML
+    private Label lblBehavior;
+
+    @FXML
+    private Label lblHabitat;
+
+    @FXML
+    private Label lblDietaryPreferences;
+
+    @FXML
+    private Label lblAddMoreDetails;
+
+
 
     @FXML
     private Button saveBtn;
@@ -259,10 +308,10 @@ public class AnimalFormController implements Initializable {
     }
 
     private Location geocodeLocations(String selectedLocation) {
-        Dotenv dotenv = Dotenv.configure().load();
+        /*Dotenv dotenv = Dotenv.configure().load();*/
 
         GeoApiContext context = new GeoApiContext.Builder()
-                .apiKey(dotenv.get("GOOGLE_MAPS_API_KEY"))
+                .apiKey("AIzaSyBIkRBwLozPBlqhe8xx8rXlUQcpUszeIY0")
                 .build();
 
         try {
@@ -351,6 +400,22 @@ public class AnimalFormController implements Initializable {
         cmbLocation.setItems(countries);
         engine = mapView.getEngine();
         loadMap();
+
+        lblCommonName.setVisible(false);
+        lblSpecies.setVisible(false);
+        lblScientificName.setVisible(false);
+        lblGender.setVisible(false);
+        lblAverageLifeTime.setVisible(false);
+        lblAverageWeight.setVisible(false);
+        lblRegion.setVisible(false);
+        lblConservationStatus.setVisible(false);
+        lblReproduction.setVisible(false);
+        lblColor.setVisible(false);
+        lblMarkings.setVisible(false);
+        lblHabitat.setVisible(false);
+        lblBehavior.setVisible(false);
+        lblDietaryPreferences.setVisible(false);
+        lblAddMoreDetails.setVisible(false);
     }
 
     public void setSearchedAnimal(Animal searchedAnimal){
@@ -359,22 +424,65 @@ public class AnimalFormController implements Initializable {
 
     public void setAnimalDetails() {
         txtSpecies.setText(searchedAnimal.getSpecies());
+        txtSpecies.setPadding(new Insets(15, 10, 5, 0));
+        txtSpecies.setLabelFloat(false);
         txtCommonName.setText(searchedAnimal.getCommon_name());
+        txtCommonName.setPadding(new Insets(15, 10, 5, 0));
+        txtCommonName.setLabelFloat(false);
         txtScientificName.setText(searchedAnimal.getScientific_name());
+        txtScientificName.setPadding(new Insets(15, 10, 5, 0));
+        txtScientificName.setLabelFloat(false);
         txtGender.setText(searchedAnimal.getGender());
+        txtGender.setPadding(new Insets(15, 10, 5, 0));
+        txtGender.setLabelFloat(false);
         txtLifeTime.setText(String.valueOf(searchedAnimal.getAverage_life_time()));
+        txtLifeTime.setPadding(new Insets(15, 10, 5, 0));
+        txtLifeTime.setLabelFloat(false);
         txtWeight.setText(String.valueOf(searchedAnimal.getAverage_weight()));
+        txtWeight.setPadding(new Insets(15, 10, 5, 0));
+        txtWeight.setLabelFloat(false);
         txtRegion.setText(searchedAnimal.getRegion());
+        txtRegion.setPadding(new Insets(15, 10, 5, 0));
+        txtRegion.setLabelFloat(false);
         txtConservationStatus.setText(searchedAnimal.getConservation_status());
+        txtConservationStatus.setPadding(new Insets(15, 10, 5, 0));
+        txtConservationStatus.setLabelFloat(false);
         txtReproduction.setText(searchedAnimal.getReproduction());
+        txtReproduction.setPadding(new Insets(15, 10, 5, 0));
+        txtReproduction.setLabelFloat(false);
         txtColor.setText(searchedAnimal.getColor());
+        txtColor.setPadding(new Insets(15, 10, 5, 0));
+        txtColor.setLabelFloat(false);
         txtMarkings.setText(searchedAnimal.getMarkings());
-        txtHabitat.setText(searchedAnimal.getHabitat());
+        txtMarkings.setPadding(new Insets(15, 10, 5, 0));
+        txtMarkings.setLabelFloat(false);
+        txtHabitat.setPadding(new Insets(15, 10, 5, 0));
         txtBehavior.setText(searchedAnimal.getBehavior());
+        txtBehavior.setPadding(new Insets(15, 10, 5, 0));
+        txtBehavior.setLabelFloat(false);
         txtDietaryPreferences.setText(searchedAnimal.getDietary_preferences());
+        txtDietaryPreferences.setPadding(new Insets(15, 10, 5, 0));
+        txtDietaryPreferences.setLabelFloat(false);
         txtAdditionalDetails.setText(searchedAnimal.getAdditional_details());
+        txtAdditionalDetails.setLabelFloat(false);
         images = searchedAnimal.getImages();
         locations = searchedAnimal.getLocations();
+
+        lblCommonName.setVisible(true);
+        lblSpecies.setVisible(true);
+        lblScientificName.setVisible(true);
+        lblGender.setVisible(true);
+        lblAverageLifeTime.setVisible(true);
+        lblAverageWeight.setVisible(true);
+        lblRegion.setVisible(true);
+        lblConservationStatus.setVisible(true);
+        lblReproduction.setVisible(true);
+        lblColor.setVisible(true);
+        lblMarkings.setVisible(true);
+        lblHabitat.setVisible(true);
+        lblBehavior.setVisible(true);
+        lblDietaryPreferences.setVisible(true);
+        lblAddMoreDetails.setVisible(true);
 
         List<ImageView> imageViews = Arrays.asList(image1, image2, image3);
 

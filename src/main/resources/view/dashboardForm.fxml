@@ -66,7 +66,7 @@
             <Image url="@../image/updateLocationImg.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="308.0" layoutY="725.0" onAction="#uploadImgBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="importButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Upload Image" textFill="WHITE">
+      <JFXButton fx:id="uploadImgBtn" layoutX="308.0" layoutY="725.0" onAction="#uploadImgBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="importButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Upload Image" textFill="WHITE">
          <font>
             <Font name="Poppins Regular" size="17.0" />
          </font>
@@ -218,7 +218,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="599.0" layoutY="465.0">
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="599.0" layoutY="465.0" onAction="#searchBtnOnAction">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -226,6 +226,11 @@
                </image>
             </ImageView>
          </graphic>
+      </JFXButton>
+      <JFXButton fx:id="uploadImgBtn1" layoutX="308.0" layoutY="818.0" onAction="#uploadImgBtnOnAction" prefHeight="38.0" prefWidth="155.0" styleClass="importButtonInDashboard" stylesheets="@../style/ComponentStyleSheet.css" text="Upload Image" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="17.0" />
+         </font>
       </JFXButton>
     </children>
 </AnchorPane>
